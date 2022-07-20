@@ -45,6 +45,17 @@ button.ml:active {
     background-color: #c8c6c4;
 }
 
+#mc_embed_signup {
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    color: #3d405b;
+    background: #f4f1de;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+    width: 600px;
+}
+
 .post-holder.odd {
     background: #f4f1de;
     color: #3d405b;
