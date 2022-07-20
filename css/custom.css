@@ -26,6 +26,25 @@ a.fn-item.active {
     opacity: 1;
 }
 
+button.ml {
+    color: #f4f1de;
+    background-color: #B80135;
+    border: none;
+    outline: none;
+    padding: 0.3em;
+    font-size: large;
+}
+
+button.ml:hover {
+    color: white;
+    background-color: #c01948;
+}
+
+button.ml:active {
+    color: #3d405b;
+    background-color: #c8c6c4;
+}
+
 .post-holder.odd {
     background: #f4f1de;
     color: #3d405b;
