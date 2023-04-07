@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+
+<title>Unicode Encoding Proposal (Early Draft) &#8211; Vamra Vaikhanasa Publishing</title>
+<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Vamra Vaikhanasa Publishing &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Vamra Vaikhanasa Publishing &raquo; Comments Feed" href="/comments/feed/">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){p.clearRect(0,0,i.width,i.height),p.fillText(e,0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(t,0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s("🏳️‍⚧️","🏳️​⚧️")?!1:!s("🇺🇳","🇺​🇳")&&!s("🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!s("🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style>img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="astra-theme-css-css" href="/wp-content/themes/astra/assets/css/minified/main.min.css?ver=4.0.2" media="all">
+<style id="astra-theme-css-inline-css">:root{--ast-container-default-xlg-padding:6.67em;--ast-container-default-lg-padding:5.67em;--ast-container-default-slg-padding:4.34em;--ast-container-default-md-padding:3.34em;--ast-container-default-sm-padding:6.67em;--ast-container-default-xs-padding:2.4em;--ast-container-default-xxs-padding:1.4em;--ast-code-block-background:#EEEEEE;--ast-comment-inputs-background:#FAFAFA;}html{font-size:106.25%;}a,.page-title{color:var(--ast-global-color-0);}a:hover,a:focus{color:var(--ast-global-color-1);}body,button,input,select,textarea,.ast-button,.ast-custom-button{font-family:'Cabin',sans-serif;font-weight:400;font-size:17px;font-size:1rem;line-height:1.6em;}blockquote{color:var(--ast-global-color-3);}h1,.entry-content h1,h2,.entry-content h2,h3,.entry-content h3,h4,.entry-content h4,h5,.entry-content h5,h6,.entry-content h6,.site-title,.site-title a{font-family:'Montserrat',sans-serif;font-weight:500;}.site-title{font-size:35px;font-size:2.0588235294118rem;display:none;}.site-header .site-description{font-size:15px;font-size:0.88235294117647rem;display:none;}.entry-title{font-size:30px;font-size:1.7647058823529rem;}h1,.entry-content h1{font-size:90px;font-size:5.2941176470588rem;font-family:'Montserrat',sans-serif;line-height:1.4em;}h2,.entry-content h2{font-size:36px;font-size:2.1176470588235rem;font-family:'Montserrat',sans-serif;line-height:1.25em;}h3,.entry-content h3{font-size:30px;font-size:1.7647058823529rem;font-weight:500;font-family:'Montserrat',sans-serif;line-height:1.2em;}h4,.entry-content h4{font-size:20px;font-size:1.1764705882353rem;line-height:1.2em;font-family:'Montserrat',sans-serif;}h5,.entry-content h5{font-size:17px;font-size:1rem;line-height:1.2em;font-family:'Montserrat',sans-serif;}h6,.entry-content h6{font-size:14px;font-size:0.82352941176471rem;line-height:1.25em;font-family:'Montserrat',sans-serif;}::selection{background-color:var(--ast-global-color-0);color:#ffffff;}body,h1,.entry-title a,.entry-content h1,h2,.entry-content h2,h3,.entry-content h3,h4,.entry-content h4,h5,.entry-content h5,h6,.entry-content h6{color:var(--ast-global-color-3);}.tagcloud a:hover,.tagcloud a:focus,.tagcloud a.current-item{color:#ffffff;border-color:var(--ast-global-color-0);background-color:var(--ast-global-color-0);}input:focus,input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="reset"]:focus,input[type="search"]:focus,textarea:focus{border-color:var(--ast-global-color-0);}input[type="radio"]:checked,input[type=reset],input[type="checkbox"]:checked,input[type="checkbox"]:hover:checked,input[type="checkbox"]:focus:checked,input[type=range]::-webkit-slider-thumb{border-color:var(--ast-global-color-0);background-color:var(--ast-global-color-0);box-shadow:none;}.site-footer a:hover + .post-count,.site-footer a:focus + .post-count{background:var(--ast-global-color-0);border-color:var(--ast-global-color-0);}.single .nav-links .nav-previous,.single .nav-links .nav-next{color:var(--ast-global-color-0);}.entry-meta,.entry-meta *{line-height:1.45;color:var(--ast-global-color-0);}.entry-meta a:hover,.entry-meta a:hover *,.entry-meta a:focus,.entry-meta a:focus *,.page-links > .page-link,.page-links .page-link:hover,.post-navigation a:hover{color:var(--ast-global-color-1);}#cat option,.secondary .calendar_wrap thead a,.secondary .calendar_wrap thead a:visited{color:var(--ast-global-color-0);}.secondary .calendar_wrap #today,.ast-progress-val span{background:var(--ast-global-color-0);}.secondary a:hover + .post-count,.secondary a:focus + .post-count{background:var(--ast-global-color-0);border-color:var(--ast-global-color-0);}.calendar_wrap #today > a{color:#ffffff;}.page-links .page-link,.single .post-navigation a{color:var(--ast-global-color-0);}.ast-header-break-point .main-header-bar .ast-button-wrap .menu-toggle{border-radius:0px;}.wp-block-latest-posts > li > a{color:var(--ast-global-color-2);}.widget-title{font-size:24px;font-size:1.4117647058824rem;color:var(--ast-global-color-3);}.ast-logo-title-inline .site-logo-img{padding-right:1em;}.site-logo-img img{ transition:all 0.2s linear;}.ast-page-builder-template .hentry {margin: 0;}.ast-page-builder-template .site-content > .ast-container {max-width: 100%;padding: 0;}.ast-page-builder-template .site-content #primary {padding: 0;margin: 0;}.ast-page-builder-template .no-results {text-align: center;margin: 4em auto;}.ast-page-builder-template .ast-pagination {padding: 2em;}.ast-page-builder-template .entry-header.ast-no-title.ast-no-thumbnail {margin-top: 0;}.ast-page-builder-template .entry-header.ast-header-without-markup {margin-top: 0;margin-bottom: 0;}.ast-page-builder-template .entry-header.ast-no-title.ast-no-meta {margin-bottom: 0;}.ast-page-builder-template.single .post-navigation {padding-bottom: 2em;}.ast-page-builder-template.single-post .site-content > .ast-container {max-width: 100%;}.ast-page-builder-template .entry-header {margin-top: 4em;margin-left: auto;margin-right: auto;padding-left: 20px;padding-right: 20px;}.single.ast-page-builder-template .entry-header {padding-left: 20px;padding-right: 20px;}.ast-page-builder-template .ast-archive-description {margin: 4em auto 0;padding-left: 20px;padding-right: 20px;}.ast-page-builder-template.ast-no-sidebar .entry-content .alignwide {margin-left: 0;margin-right: 0;}@media (max-width:921px){#ast-desktop-header{display:none;}}@media (min-width:921px){#ast-mobile-header{display:none;}}.wp-block-buttons.aligncenter{justify-content:center;}@media (max-width:921px){.ast-separate-container #primary,.ast-separate-container #secondary{padding:1.5em 0;}#primary,#secondary{padding:1.5em 0;margin:0;}.ast-left-sidebar #content > .ast-container{display:flex;flex-direction:column-reverse;width:100%;}.ast-separate-container .ast-article-post,.ast-separate-container .ast-article-single{padding:1.5em 2.14em;}.ast-author-box img.avatar{margin:20px 0 0 0;}}@media (min-width:922px){.ast-separate-container.ast-right-sidebar #primary,.ast-separate-container.ast-left-sidebar #primary{border:0;}.search-no-results.ast-separate-container #primary{margin-bottom:4em;}}.elementor-button-wrapper .elementor-button{border-style:solid;text-decoration:none;border-top-width:0;border-right-width:0;border-left-width:0;border-bottom-width:0;}body .elementor-button.elementor-size-sm,body .elementor-button.elementor-size-xs,body .elementor-button.elementor-size-md,body .elementor-button.elementor-size-lg,body .elementor-button.elementor-size-xl,body .elementor-button{border-radius:0px;padding-top:15px;padding-right:35px;padding-bottom:15px;padding-left:35px;}.elementor-button-wrapper .elementor-button{border-color:var(--ast-global-color-0);background-color:var(--ast-global-color-0);}.elementor-button-wrapper .elementor-button:hover,.elementor-button-wrapper .elementor-button:focus{color:#ffffff;background-color:var(--ast-global-color-1);border-color:var(--ast-global-color-1);}.wp-block-button .wp-block-button__link ,.elementor-button-wrapper .elementor-button,.elementor-button-wrapper .elementor-button:visited{color:#ffffff;}.elementor-button-wrapper .elementor-button{font-family:'Cabin',sans-serif;font-weight:600;font-size:12px;font-size:0.70588235294118rem;line-height:1em;text-transform:uppercase;letter-spacing:3px;}body .elementor-button.elementor-size-sm,body .elementor-button.elementor-size-xs,body .elementor-button.elementor-size-md,body .elementor-button.elementor-size-lg,body .elementor-button.elementor-size-xl,body .elementor-button{font-size:12px;font-size:0.70588235294118rem;}.wp-block-button .wp-block-button__link:hover,.wp-block-button .wp-block-button__link:focus{color:#ffffff;background-color:var(--ast-global-color-1);border-color:var(--ast-global-color-1);}.elementor-widget-heading h1.elementor-heading-title{line-height:1.4em;}.elementor-widget-heading h2.elementor-heading-title{line-height:1.25em;}.elementor-widget-heading h3.elementor-heading-title{line-height:1.2em;}.elementor-widget-heading h4.elementor-heading-title{line-height:1.2em;}.elementor-widget-heading h5.elementor-heading-title{line-height:1.2em;}.elementor-widget-heading h6.elementor-heading-title{line-height:1.25em;}.wp-block-button .wp-block-button__link,.wp-block-search .wp-block-search__button,body .wp-block-file .wp-block-file__button{border-color:var(--ast-global-color-0);background-color:var(--ast-global-color-0);color:#ffffff;font-family:'Cabin',sans-serif;font-weight:600;line-height:1em;text-transform:uppercase;letter-spacing:3px;font-size:12px;font-size:0.70588235294118rem;border-radius:0px;padding-top:15px;padding-right:35px;padding-bottom:15px;padding-left:35px;}.menu-toggle,button,.ast-button,.ast-custom-button,.button,input#submit,input[type="button"],input[type="submit"],input[type="reset"],form[CLASS*="wp-block-search__"].wp-block-search .wp-block-search__inside-wrapper .wp-block-search__button,body .wp-block-file .wp-block-file__button{border-style:solid;border-top-width:0;border-right-width:0;border-left-width:0;border-bottom-width:0;color:#ffffff;border-color:var(--ast-global-color-0);background-color:var(--ast-global-color-0);border-radius:0px;padding-top:15px;padding-right:35px;padding-bottom:15px;padding-left:35px;font-family:'Cabin',sans-serif;font-weight:600;font-size:12px;font-size:0.70588235294118rem;line-height:1em;text-transform:uppercase;letter-spacing:3px;}button:focus,.menu-toggle:hover,button:hover,.ast-button:hover,.ast-custom-button:hover .button:hover,.ast-custom-button:hover ,input[type=reset]:hover,input[type=reset]:focus,input#submit:hover,input#submit:focus,input[type="button"]:hover,input[type="button"]:focus,input[type="submit"]:hover,input[type="submit"]:focus,form[CLASS*="wp-block-search__"].wp-block-search .wp-block-search__inside-wrapper .wp-block-search__button:hover,form[CLASS*="wp-block-search__"].wp-block-search .wp-block-search__inside-wrapper .wp-block-search__button:focus,body .wp-block-file .wp-block-file__button:hover,body .wp-block-file .wp-block-file__button:focus{color:#ffffff;background-color:var(--ast-global-color-1);border-color:var(--ast-global-color-1);}@media (min-width:544px){.ast-container{max-width:100%;}}@media (max-width:544px){.ast-separate-container .ast-article-post,.ast-separate-container .ast-article-single,.ast-separate-container .comments-title,.ast-separate-container .ast-archive-description{padding:1.5em 1em;}.ast-separate-container #content .ast-container{padding-left:0.54em;padding-right:0.54em;}.ast-separate-container .ast-comment-list li.depth-1{padding:1.5em 1em;margin-bottom:1.5em;}.ast-separate-container .ast-comment-list .bypostauthor{padding:.5em;}.ast-search-menu-icon.ast-dropdown-active .search-field{width:170px;}}@media (max-width:921px){.ast-mobile-header-stack .main-header-bar .ast-search-menu-icon{display:inline-block;}.ast-header-break-point.ast-header-custom-item-outside .ast-mobile-header-stack .main-header-bar .ast-search-icon{margin:0;}.ast-comment-avatar-wrap img{max-width:2.5em;}.ast-separate-container .ast-comment-list li.depth-1{padding:1.5em 2.14em;}.ast-separate-container .comment-respond{padding:2em 2.14em;}.ast-comment-meta{padding:0 1.8888em 1.3333em;}}body,.ast-separate-container{background-color:var(--ast-global-color-4);;background-image:none;;}@media (max-width:921px){.widget-title{font-size:25px;font-size:1.3888888888889rem;}body,button,input,select,textarea,.ast-button,.ast-custom-button{font-size:18px;font-size:1.0588235294118rem;}#secondary,#secondary button,#secondary input,#secondary select,#secondary textarea{font-size:18px;font-size:1.0588235294118rem;}.site-title{display:none;}.site-header .site-description{display:none;}.entry-title{font-size:30px;}h1,.entry-content h1{font-size:50px;}h2,.entry-content h2{font-size:32px;}h3,.entry-content h3{font-size:28px;}h4,.entry-content h4{font-size:18px;font-size:1.0588235294118rem;}h5,.entry-content h5{font-size:16px;font-size:0.94117647058824rem;}}@media (max-width:544px){.site-title{display:none;}.site-header .site-description{display:none;}.entry-title{font-size:30px;}h1,.entry-content h1{font-size:30px;}h2,.entry-content h2{font-size:25px;}h3,.entry-content h3{font-size:28px;}}@media (max-width:544px){html{font-size:96.9%;}}@media (min-width:922px){.ast-container{max-width:1240px;}}@media (min-width:922px){.site-content .ast-container{display:flex;}}@media (max-width:921px){.site-content .ast-container{flex-direction:column;}}@media (min-width:922px){.main-header-menu .sub-menu .menu-item.ast-left-align-sub-menu:hover > .sub-menu,.main-header-menu .sub-menu .menu-item.ast-left-align-sub-menu.focus > .sub-menu{margin-left:-0px;}}blockquote,cite {font-style: initial;}.wp-block-file {display: flex;align-items: center;flex-wrap: wrap;justify-content: space-between;}.wp-block-pullquote {border: none;}.wp-block-pullquote blockquote::before {content: "\201D";font-family: "Helvetica",sans-serif;display: flex;transform: rotate( 180deg );font-size: 6rem;font-style: normal;line-height: 1;font-weight: bold;align-items: center;justify-content: center;}.has-text-align-right > blockquote::before {justify-content: flex-start;}.has-text-align-left > blockquote::before {justify-content: flex-end;}figure.wp-block-pullquote.is-style-solid-color blockquote {max-width: 100%;text-align: inherit;}html body {--wp--custom--ast-default-block-top-padding: 3em;--wp--custom--ast-default-block-right-padding: 3em;--wp--custom--ast-default-block-bottom-padding: 3em;--wp--custom--ast-default-block-left-padding: 3em;--wp--custom--ast-container-width: 1200px;--wp--custom--ast-content-width-size: 1200px;--wp--custom--ast-wide-width-size: calc(1200px + var(--wp--custom--ast-default-block-left-padding) + var(--wp--custom--ast-default-block-right-padding));}.ast-narrow-container {--wp--custom--ast-content-width-size: 750px;--wp--custom--ast-wide-width-size: 750px;}@media(max-width: 921px) {html body {--wp--custom--ast-default-block-top-padding: 3em;--wp--custom--ast-default-block-right-padding: 2em;--wp--custom--ast-default-block-bottom-padding: 3em;--wp--custom--ast-default-block-left-padding: 2em;}}@media(max-width: 544px) {html body {--wp--custom--ast-default-block-top-padding: 3em;--wp--custom--ast-default-block-right-padding: 1.5em;--wp--custom--ast-default-block-bottom-padding: 3em;--wp--custom--ast-default-block-left-padding: 1.5em;}}.entry-content > .wp-block-group,.entry-content > .wp-block-cover,.entry-content > .wp-block-columns {padding-top: var(--wp--custom--ast-default-block-top-padding);padding-right: var(--wp--custom--ast-default-block-right-padding);padding-bottom: var(--wp--custom--ast-default-block-bottom-padding);padding-left: var(--wp--custom--ast-default-block-left-padding);}.ast-plain-container.ast-no-sidebar .entry-content > .alignfull,.ast-page-builder-template .ast-no-sidebar .entry-content > .alignfull {margin-left: calc( -50vw + 50%);margin-right: calc( -50vw + 50%);max-width: 100vw;width: 100vw;}.ast-plain-container.ast-no-sidebar .entry-content .alignfull .alignfull,.ast-page-builder-template.ast-no-sidebar .entry-content .alignfull .alignfull,.ast-plain-container.ast-no-sidebar .entry-content .alignfull .alignwide,.ast-page-builder-template.ast-no-sidebar .entry-content .alignfull .alignwide,.ast-plain-container.ast-no-sidebar .entry-content .alignwide .alignfull,.ast-page-builder-template.ast-no-sidebar .entry-content .alignwide .alignfull,.ast-plain-container.ast-no-sidebar .entry-content .alignwide .alignwide,.ast-page-builder-template.ast-no-sidebar .entry-content .alignwide .alignwide,.ast-plain-container.ast-no-sidebar .entry-content .wp-block-column .alignfull,.ast-page-builder-template.ast-no-sidebar .entry-content .wp-block-column .alignfull,.ast-plain-container.ast-no-sidebar .entry-content .wp-block-column .alignwide,.ast-page-builder-template.ast-no-sidebar .entry-content .wp-block-column .alignwide {margin-left: auto;margin-right: auto;width: 100%;}[ast-blocks-layout] .wp-block-separator:not(.is-style-dots) {height: 0;}[ast-blocks-layout] .wp-block-separator {margin: 20px auto;}[ast-blocks-layout] .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {max-width: 100px;}[ast-blocks-layout] .wp-block-separator.has-background {padding: 0;}.entry-content[ast-blocks-layout] > * {max-width: var(--wp--custom--ast-content-width-size);margin-left: auto;margin-right: auto;}.entry-content[ast-blocks-layout] > .alignwide {max-width: var(--wp--custom--ast-wide-width-size);}.entry-content[ast-blocks-layout] .alignfull {max-width: none;}.entry-content .wp-block-columns {margin-bottom: 0;}blockquote {margin: 1.5em;border: none;}.wp-block-quote:not(.has-text-align-right):not(.has-text-align-center) {border-left: 5px solid rgba(0,0,0,0.05);}.has-text-align-right > blockquote,blockquote.has-text-align-right {border-right: 5px solid rgba(0,0,0,0.05);}.has-text-align-left > blockquote,blockquote.has-text-align-left {border-left: 5px solid rgba(0,0,0,0.05);}.wp-block-site-tagline,.wp-block-latest-posts .read-more {margin-top: 15px;}.wp-block-loginout p label {display: block;}.wp-block-loginout p:not(.login-remember):not(.login-submit) input {width: 100%;}.wp-block-loginout input:focus {border-color: transparent;}.wp-block-loginout input:focus {outline: thin dotted;}.entry-content .wp-block-media-text .wp-block-media-text__content {padding: 0 0 0 8%;}.entry-content .wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {padding: 0 8% 0 0;}.entry-content .wp-block-media-text.has-background .wp-block-media-text__content {padding: 8%;}.entry-content .wp-block-cover:not([class*="background-color"]) .wp-block-cover__inner-container,.entry-content .wp-block-cover:not([class*="background-color"]) .wp-block-cover-image-text,.entry-content .wp-block-cover:not([class*="background-color"]) .wp-block-cover-text,.entry-content .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover__inner-container,.entry-content .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-image-text,.entry-content .wp-block-cover-image:not([class*="background-color"]) .wp-block-cover-text {color: var(--ast-global-color-5);}.wp-block-loginout .login-remember input {width: 1.1rem;height: 1.1rem;margin: 0 5px 4px 0;vertical-align: middle;}.wp-block-latest-posts > li > *:first-child,.wp-block-latest-posts:not(.is-grid) > li:first-child {margin-top: 0;}.wp-block-search__inside-wrapper .wp-block-search__input {padding: 0 10px;color: var(--ast-global-color-3);background: var(--ast-global-color-5);border-color: var(--ast-border-color);}.wp-block-latest-posts .read-more {margin-bottom: 1.5em;}.wp-block-search__no-button .wp-block-search__inside-wrapper .wp-block-search__input {padding-top: 5px;padding-bottom: 5px;}.wp-block-latest-posts .wp-block-latest-posts__post-date,.wp-block-latest-posts .wp-block-latest-posts__post-author {font-size: 1rem;}.wp-block-latest-posts > li > *,.wp-block-latest-posts:not(.is-grid) > li {margin-top: 12px;margin-bottom: 12px;}.ast-page-builder-template .entry-content[ast-blocks-layout] > *,.ast-page-builder-template .entry-content[ast-blocks-layout] > .alignfull > * {max-width: none;}.ast-page-builder-template .entry-content[ast-blocks-layout] > .alignwide > * {max-width: var(--wp--custom--ast-wide-width-size);}.ast-page-builder-template .entry-content[ast-blocks-layout] > .inherit-container-width > *,.ast-page-builder-template .entry-content[ast-blocks-layout] > * > *,.entry-content[ast-blocks-layout] > .wp-block-cover .wp-block-cover__inner-container {max-width: var(--wp--custom--ast-content-width-size);margin-left: auto;margin-right: auto;}.entry-content[ast-blocks-layout] .wp-block-cover:not(.alignleft):not(.alignright) {width: auto;}@media(max-width: 1200px) {.ast-separate-container .entry-content > .alignfull,.ast-separate-container .entry-content[ast-blocks-layout] > .alignwide,.ast-plain-container .entry-content[ast-blocks-layout] > .alignwide,.ast-plain-container .entry-content .alignfull {margin-left: calc(-1 * min(var(--ast-container-default-xlg-padding),20px)) ;margin-right: calc(-1 * min(var(--ast-container-default-xlg-padding),20px));}}@media(min-width: 1201px) {.ast-separate-container .entry-content > .alignfull {margin-left: calc(-1 * var(--ast-container-default-xlg-padding) );margin-right: calc(-1 * var(--ast-container-default-xlg-padding) );}.ast-separate-container .entry-content[ast-blocks-layout] > .alignwide,.ast-plain-container .entry-content[ast-blocks-layout] > .alignwide {margin-left: calc(-1 * var(--wp--custom--ast-default-block-left-padding) );margin-right: calc(-1 * var(--wp--custom--ast-default-block-right-padding) );}}@media(min-width: 921px) {.ast-separate-container .entry-content .wp-block-group.alignwide:not(.inherit-container-width) > :where(:not(.alignleft):not(.alignright)),.ast-plain-container .entry-content .wp-block-group.alignwide:not(.inherit-container-width) > :where(:not(.alignleft):not(.alignright)) {max-width: calc( var(--wp--custom--ast-content-width-size) + 80px );}.ast-plain-container.ast-right-sidebar .entry-content[ast-blocks-layout] .alignfull,.ast-plain-container.ast-left-sidebar .entry-content[ast-blocks-layout] .alignfull {margin-left: -60px;margin-right: -60px;}}@media(min-width: 544px) {.entry-content > .alignleft {margin-right: 20px;}.entry-content > .alignright {margin-left: 20px;}}@media (max-width:544px){.wp-block-columns .wp-block-column:not(:last-child){margin-bottom:20px;}.wp-block-latest-posts{margin:0;}}@media( max-width: 600px ) {.entry-content .wp-block-media-text .wp-block-media-text__content,.entry-content .wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {padding: 8% 0 0;}.entry-content .wp-block-media-text.has-background .wp-block-media-text__content {padding: 8%;}}.ast-separate-container .entry-content .wp-block-uagb-container {padding-left: 0;}.ast-page-builder-template .entry-header {padding-left: 0;}@media(min-width: 1201px) {.ast-separate-container .entry-content > .uagb-is-root-container {margin-left: 0;margin-right: 0;}}.ast-narrow-container .site-content .wp-block-uagb-image--align-full .wp-block-uagb-image__figure {max-width: 100%;margin-left: auto;margin-right: auto;}:root .has-ast-global-color-0-color{color:var(--ast-global-color-0);}:root .has-ast-global-color-0-background-color{background-color:var(--ast-global-color-0);}:root .wp-block-button .has-ast-global-color-0-color{color:var(--ast-global-color-0);}:root .wp-block-button .has-ast-global-color-0-background-color{background-color:var(--ast-global-color-0);}:root .has-ast-global-color-1-color{color:var(--ast-global-color-1);}:root .has-ast-global-color-1-background-color{background-color:var(--ast-global-color-1);}:root .wp-block-button .has-ast-global-color-1-color{color:var(--ast-global-color-1);}:root .wp-block-button .has-ast-global-color-1-background-color{background-color:var(--ast-global-color-1);}:root .has-ast-global-color-2-color{color:var(--ast-global-color-2);}:root .has-ast-global-color-2-background-color{background-color:var(--ast-global-color-2);}:root .wp-block-button .has-ast-global-color-2-color{color:var(--ast-global-color-2);}:root .wp-block-button .has-ast-global-color-2-background-color{background-color:var(--ast-global-color-2);}:root .has-ast-global-color-3-color{color:var(--ast-global-color-3);}:root .has-ast-global-color-3-background-color{background-color:var(--ast-global-color-3);}:root .wp-block-button .has-ast-global-color-3-color{color:var(--ast-global-color-3);}:root .wp-block-button .has-ast-global-color-3-background-color{background-color:var(--ast-global-color-3);}:root .has-ast-global-color-4-color{color:var(--ast-global-color-4);}:root .has-ast-global-color-4-background-color{background-color:var(--ast-global-color-4);}:root .wp-block-button .has-ast-global-color-4-color{color:var(--ast-global-color-4);}:root .wp-block-button .has-ast-global-color-4-background-color{background-color:var(--ast-global-color-4);}:root .has-ast-global-color-5-color{color:var(--ast-global-color-5);}:root .has-ast-global-color-5-background-color{background-color:var(--ast-global-color-5);}:root .wp-block-button .has-ast-global-color-5-color{color:var(--ast-global-color-5);}:root .wp-block-button .has-ast-global-color-5-background-color{background-color:var(--ast-global-color-5);}:root .has-ast-global-color-6-color{color:var(--ast-global-color-6);}:root .has-ast-global-color-6-background-color{background-color:var(--ast-global-color-6);}:root .wp-block-button .has-ast-global-color-6-color{color:var(--ast-global-color-6);}:root .wp-block-button .has-ast-global-color-6-background-color{background-color:var(--ast-global-color-6);}:root .has-ast-global-color-7-color{color:var(--ast-global-color-7);}:root .has-ast-global-color-7-background-color{background-color:var(--ast-global-color-7);}:root .wp-block-button .has-ast-global-color-7-color{color:var(--ast-global-color-7);}:root .wp-block-button .has-ast-global-color-7-background-color{background-color:var(--ast-global-color-7);}:root .has-ast-global-color-8-color{color:var(--ast-global-color-8);}:root .has-ast-global-color-8-background-color{background-color:var(--ast-global-color-8);}:root .wp-block-button .has-ast-global-color-8-color{color:var(--ast-global-color-8);}:root .wp-block-button .has-ast-global-color-8-background-color{background-color:var(--ast-global-color-8);}:root{--ast-global-color-0:#269fb7;--ast-global-color-1:#323232;--ast-global-color-2:#000000;--ast-global-color-3:#565656;--ast-global-color-4:#f7f7f7;--ast-global-color-5:#ffffff;--ast-global-color-6:#b8b8b8;--ast-global-color-7:#269fb7;--ast-global-color-8:#fbfbfb;}:root {--ast-border-color : #dddddd;}.ast-single-entry-banner {-js-display: flex;display: flex;flex-direction: column;justify-content: center;text-align: center;position: relative;background: #eeeeee;}.ast-single-entry-banner[data-banner-layout="layout-1"] {max-width: 1200px;background: inherit;padding: 20px 0;}.ast-single-entry-banner[data-banner-width-type="custom"] {margin: 0 auto;width: 100%;}.ast-single-entry-banner + .site-content .entry-header {margin-bottom: 0;}header.entry-header > *:not(:last-child){margin-bottom:10px;}.ast-archive-entry-banner {-js-display: flex;display: flex;flex-direction: column;justify-content: center;text-align: center;position: relative;background: #eeeeee;}.ast-archive-entry-banner[data-banner-width-type="custom"] {margin: 0 auto;width: 100%;}.ast-archive-entry-banner[data-banner-layout="layout-1"] {background: inherit;padding: 20px 0;text-align: left;}body.archive .ast-archive-description{max-width:1200px;width:100%;text-align:left;padding-top:3em;padding-right:3em;padding-bottom:3em;padding-left:3em;}body.archive .ast-archive-description .ast-archive-title,body.archive .ast-archive-description .ast-archive-title *{font-size:40px;font-size:2.3529411764706rem;}body.archive .ast-archive-description > *:not(:last-child){margin-bottom:10px;}@media (max-width:921px){body.archive .ast-archive-description{text-align:left;}}@media (max-width:544px){body.archive .ast-archive-description{text-align:left;}}.ast-breadcrumbs .trail-browse,.ast-breadcrumbs .trail-items,.ast-breadcrumbs .trail-items li{display:inline-block;margin:0;padding:0;border:none;background:inherit;text-indent:0;}.ast-breadcrumbs .trail-browse{font-size:inherit;font-style:inherit;font-weight:inherit;color:inherit;}.ast-breadcrumbs .trail-items{list-style:none;}.trail-items li::after{padding:0 0.3em;content:"\00bb";}.trail-items li:last-of-type::after{display:none;}h1,.entry-content h1,h2,.entry-content h2,h3,.entry-content h3,h4,.entry-content h4,h5,.entry-content h5,h6,.entry-content h6{color:var(--ast-global-color-2);}@media (max-width:921px){.ast-builder-grid-row-container.ast-builder-grid-row-tablet-3-firstrow .ast-builder-grid-row > *:first-child,.ast-builder-grid-row-container.ast-builder-grid-row-tablet-3-lastrow .ast-builder-grid-row > *:last-child{grid-column:1 / -1;}}@media (max-width:544px){.ast-builder-grid-row-container.ast-builder-grid-row-mobile-3-firstrow .ast-builder-grid-row > *:first-child,.ast-builder-grid-row-container.ast-builder-grid-row-mobile-3-lastrow .ast-builder-grid-row > *:last-child{grid-column:1 / -1;}}.ast-builder-menu-1{font-family:inherit;font-weight:inherit;text-transform:uppercase;}.ast-builder-menu-1 .menu-item > .menu-link{font-size:14px;font-size:0.82352941176471rem;color:var(--ast-global-color-3);}.ast-builder-menu-1 .menu-item > .ast-menu-toggle{color:var(--ast-global-color-3);}.ast-builder-menu-1 .menu-item:hover > .menu-link,.ast-builder-menu-1 .inline-on-mobile .menu-item:hover > .ast-menu-toggle{color:var(--ast-global-color-0);}.ast-builder-menu-1 .menu-item:hover > .ast-menu-toggle{color:var(--ast-global-color-0);}.ast-builder-menu-1 .menu-item.current-menu-item > .menu-link,.ast-builder-menu-1 .inline-on-mobile .menu-item.current-menu-item > .ast-menu-toggle,.ast-builder-menu-1 .current-menu-ancestor > .menu-link{color:var(--ast-global-color-0);}.ast-builder-menu-1 .menu-item.current-menu-item > .ast-menu-toggle{color:var(--ast-global-color-0);}.ast-builder-menu-1 .sub-menu,.ast-builder-menu-1 .inline-on-mobile .sub-menu{border-top-width:2px;border-bottom-width:0px;border-right-width:0px;border-left-width:0px;border-color:var(--ast-global-color-0);border-style:solid;border-radius:0px;}.ast-builder-menu-1 .main-header-menu > .menu-item > .sub-menu,.ast-builder-menu-1 .main-header-menu > .menu-item > .astra-full-megamenu-wrapper{margin-top:0px;}.ast-desktop .ast-builder-menu-1 .main-header-menu > .menu-item > .sub-menu:before,.ast-desktop .ast-builder-menu-1 .main-header-menu > .menu-item > .astra-full-megamenu-wrapper:before{height:calc( 0px + 5px );}.ast-builder-menu-1 .main-header-menu,.ast-builder-menu-1 .main-header-menu .sub-menu{background-color:;;background-image:none;;}.ast-desktop .ast-builder-menu-1 .menu-item .sub-menu .menu-link{border-style:none;}@media (max-width:921px){.ast-builder-menu-1 .main-header-menu .menu-item > .menu-link{color:var(--ast-global-color-3);}.ast-builder-menu-1 .menu-item > .ast-menu-toggle{color:var(--ast-global-color-3);}.ast-builder-menu-1 .menu-item:hover > .menu-link,.ast-builder-menu-1 .inline-on-mobile .menu-item:hover > .ast-menu-toggle{color:var(--ast-global-color-0);background:var(--ast-global-color-4);}.ast-builder-menu-1 .menu-item:hover > .ast-menu-toggle{color:var(--ast-global-color-0);}.ast-builder-menu-1 .menu-item.current-menu-item > .menu-link,.ast-builder-menu-1 .inline-on-mobile .menu-item.current-menu-item > .ast-menu-toggle,.ast-builder-menu-1 .current-menu-ancestor > .menu-link,.ast-builder-menu-1 .current-menu-ancestor > .ast-menu-toggle{color:var(--ast-global-color-0);background:var(--ast-global-color-4);}.ast-builder-menu-1 .menu-item.current-menu-item > .ast-menu-toggle{color:var(--ast-global-color-0);}.ast-header-break-point .ast-builder-menu-1 .menu-item.menu-item-has-children > .ast-menu-toggle{top:0;}.ast-builder-menu-1 .menu-item-has-children > .menu-link:after{content:unset;}.ast-builder-menu-1 .main-header-menu > .menu-item > .sub-menu,.ast-builder-menu-1 .main-header-menu > .menu-item > .astra-full-megamenu-wrapper{margin-top:0;}.ast-builder-menu-1 .main-header-menu,.ast-builder-menu-1 .main-header-menu .sub-menu{background-color:var(--ast-global-color-5);;background-image:none;;}}@media (max-width:544px){.ast-header-break-point .ast-builder-menu-1 .menu-item.menu-item-has-children > .ast-menu-toggle{top:0;}.ast-builder-menu-1 .main-header-menu > .menu-item > .sub-menu,.ast-builder-menu-1 .main-header-menu > .menu-item > .astra-full-megamenu-wrapper{margin-top:0;}}.ast-builder-menu-1{display:flex;}@media (max-width:921px){.ast-header-break-point .ast-builder-menu-1{display:flex;}}@media (max-width:544px){.ast-header-break-point .ast-builder-menu-1{display:flex;}}.site-below-footer-wrap{padding-top:20px;padding-bottom:20px;}.site-below-footer-wrap[data-section="section-below-footer-builder"]{background-color:;;background-image:none;;min-height:80px;}.site-below-footer-wrap[data-section="section-below-footer-builder"] .ast-builder-grid-row{max-width:1200px;margin-left:auto;margin-right:auto;}.site-below-footer-wrap[data-section="section-below-footer-builder"] .ast-builder-grid-row,.site-below-footer-wrap[data-section="section-below-footer-builder"] .site-footer-section{align-items:flex-start;}.site-below-footer-wrap[data-section="section-below-footer-builder"].ast-footer-row-inline .site-footer-section{display:flex;margin-bottom:0;}.ast-builder-grid-row-full .ast-builder-grid-row{grid-template-columns:1fr;}@media (max-width:921px){.site-below-footer-wrap[data-section="section-below-footer-builder"].ast-footer-row-tablet-inline .site-footer-section{display:flex;margin-bottom:0;}.site-below-footer-wrap[data-section="section-below-footer-builder"].ast-footer-row-tablet-stack .site-footer-section{display:block;margin-bottom:10px;}.ast-builder-grid-row-container.ast-builder-grid-row-tablet-full .ast-builder-grid-row{grid-template-columns:1fr;}}@media (max-width:544px){.site-below-footer-wrap[data-section="section-below-footer-builder"].ast-footer-row-mobile-inline .site-footer-section{display:flex;margin-bottom:0;}.site-below-footer-wrap[data-section="section-below-footer-builder"].ast-footer-row-mobile-stack .site-footer-section{display:block;margin-bottom:10px;}.ast-builder-grid-row-container.ast-builder-grid-row-mobile-full .ast-builder-grid-row{grid-template-columns:1fr;}}.site-below-footer-wrap[data-section="section-below-footer-builder"]{display:grid;}@media (max-width:921px){.ast-header-break-point .site-below-footer-wrap[data-section="section-below-footer-builder"]{display:grid;}}@media (max-width:544px){.ast-header-break-point .site-below-footer-wrap[data-section="section-below-footer-builder"]{display:grid;}}.ast-footer-copyright{text-align:left;}.ast-footer-copyright {color:var(--ast-global-color-4);margin-top:0px;margin-bottom:30px;margin-left:30px;margin-right:0px;}@media (max-width:921px){.ast-footer-copyright{text-align:left;}}@media (max-width:544px){.ast-footer-copyright{text-align:center;}}.ast-footer-copyright {font-size:0px;font-size:0rem;}.ast-footer-copyright.ast-builder-layout-element{display:flex;}@media (max-width:921px){.ast-header-break-point .ast-footer-copyright.ast-builder-layout-element{display:flex;}}@media (max-width:544px){.ast-header-break-point .ast-footer-copyright.ast-builder-layout-element{display:flex;}}.site-footer{background-color:var(--ast-global-color-2);;background-image:none;;}.ast-hfb-header .site-footer{padding-top:0px;padding-bottom:0px;padding-left:0px;padding-right:0px;margin-top:0px;margin-bottom:0px;margin-left:0px;margin-right:0px;}.site-primary-footer-wrap{padding-top:45px;padding-bottom:45px;}.site-primary-footer-wrap[data-section="section-primary-footer-builder"]{background-color:;;background-image:none;;}.site-primary-footer-wrap[data-section="section-primary-footer-builder"] .ast-builder-grid-row{grid-column-gap:0px;max-width:1200px;margin-left:auto;margin-right:auto;}.site-primary-footer-wrap[data-section="section-primary-footer-builder"] .ast-builder-grid-row,.site-primary-footer-wrap[data-section="section-primary-footer-builder"] .site-footer-section{align-items:flex-start;}.site-primary-footer-wrap[data-section="section-primary-footer-builder"].ast-footer-row-inline .site-footer-section{display:flex;margin-bottom:0;}.ast-builder-grid-row-3-equal .ast-builder-grid-row{grid-template-columns:repeat( 3,1fr );}@media (max-width:921px){.site-primary-footer-wrap[data-section="section-primary-footer-builder"].ast-footer-row-tablet-inline .site-footer-section{display:flex;margin-bottom:0;}.site-primary-footer-wrap[data-section="section-primary-footer-builder"].ast-footer-row-tablet-stack .site-footer-section{display:block;margin-bottom:10px;}.ast-builder-grid-row-container.ast-builder-grid-row-tablet-3-equal .ast-builder-grid-row{grid-template-columns:repeat( 3,1fr );}}@media (max-width:544px){.site-primary-footer-wrap[data-section="section-primary-footer-builder"].ast-footer-row-mobile-inline .site-footer-section{display:flex;margin-bottom:0;}.site-primary-footer-wrap[data-section="section-primary-footer-builder"].ast-footer-row-mobile-stack .site-footer-section{display:block;margin-bottom:10px;}.ast-builder-grid-row-container.ast-builder-grid-row-mobile-full .ast-builder-grid-row{grid-template-columns:1fr;}}.site-primary-footer-wrap[data-section="section-primary-footer-builder"]{padding-top:0px;padding-bottom:0px;padding-left:0px;padding-right:0px;}@media (max-width:921px){.site-primary-footer-wrap[data-section="section-primary-footer-builder"]{padding-top:80px;padding-bottom:80px;padding-left:20px;padding-right:20px;}}@media (max-width:544px){.site-primary-footer-wrap[data-section="section-primary-footer-builder"]{padding-top:50px;padding-bottom:50px;padding-left:30px;padding-right:30px;}}.site-primary-footer-wrap[data-section="section-primary-footer-builder"]{display:grid;}@media (max-width:921px){.ast-header-break-point .site-primary-footer-wrap[data-section="section-primary-footer-builder"]{display:grid;}}@media (max-width:544px){.ast-header-break-point .site-primary-footer-wrap[data-section="section-primary-footer-builder"]{display:grid;}}.footer-widget-area[data-section="sidebar-widgets-footer-widget-2"].footer-widget-area-inner{text-align:left;}@media (max-width:921px){.footer-widget-area[data-section="sidebar-widgets-footer-widget-2"].footer-widget-area-inner{text-align:center;}}@media (max-width:544px){.footer-widget-area[data-section="sidebar-widgets-footer-widget-2"].footer-widget-area-inner{text-align:center;}}.footer-widget-area[data-section="sidebar-widgets-footer-widget-2"].footer-widget-area-inner{font-size:0px;font-size:0rem;}.footer-widget-area[data-section="sidebar-widgets-footer-widget-2"] .widget-title{font-size:29px;font-size:1.7058823529412rem;}.footer-widget-area[data-section="sidebar-widgets-footer-widget-2"]{display:block;}@media (max-width:921px){.ast-header-break-point .footer-widget-area[data-section="sidebar-widgets-footer-widget-2"]{display:block;}}@media (max-width:544px){.ast-header-break-point .footer-widget-area[data-section="sidebar-widgets-footer-widget-2"]{display:block;}}.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"].footer-widget-area-inner a{color:var(--ast-global-color-4);}.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"].footer-widget-area-inner a:hover{color:var(--ast-global-color-0);}.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"] .widget-title{color:var(--ast-global-color-5);}.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"]{display:block;}@media (max-width:921px){.ast-header-break-point .footer-widget-area[data-section="sidebar-widgets-footer-widget-3"]{display:block;}}@media (max-width:544px){.ast-header-break-point .footer-widget-area[data-section="sidebar-widgets-footer-widget-3"]{display:block;}}.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"].footer-widget-area-inner{text-align:right;}@media (max-width:921px){.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"].footer-widget-area-inner{text-align:right;}}@media (max-width:544px){.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"].footer-widget-area-inner{text-align:center;}}.footer-widget-area[data-section="sidebar-widgets-footer-widget-2"].footer-widget-area-inner{font-size:0px;font-size:0rem;}.footer-widget-area[data-section="sidebar-widgets-footer-widget-2"] .widget-title{font-size:29px;font-size:1.7058823529412rem;}.footer-widget-area[data-section="sidebar-widgets-footer-widget-2"]{display:block;}@media (max-width:921px){.ast-header-break-point .footer-widget-area[data-section="sidebar-widgets-footer-widget-2"]{display:block;}}@media (max-width:544px){.ast-header-break-point .footer-widget-area[data-section="sidebar-widgets-footer-widget-2"]{display:block;}}.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"].footer-widget-area-inner a{color:var(--ast-global-color-4);}.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"].footer-widget-area-inner a:hover{color:var(--ast-global-color-0);}.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"] .widget-title{color:var(--ast-global-color-5);}.footer-widget-area[data-section="sidebar-widgets-footer-widget-3"]{display:block;}@media (max-width:921px){.ast-header-break-point .footer-widget-area[data-section="sidebar-widgets-footer-widget-3"]{display:block;}}@media (max-width:544px){.ast-header-break-point .footer-widget-area[data-section="sidebar-widgets-footer-widget-3"]{display:block;}}.elementor-widget-heading .elementor-heading-title{margin:0;}.elementor-page .ast-menu-toggle{color:unset !important;background:unset !important;}.elementor-post.elementor-grid-item.hentry{margin-bottom:0;}.woocommerce div.product .elementor-element.elementor-products-grid .related.products ul.products li.product,.elementor-element .elementor-wc-products .woocommerce[class*='columns-'] ul.products li.product{width:auto;margin:0;float:none;}.ast-left-sidebar .elementor-section.elementor-section-stretched,.ast-right-sidebar .elementor-section.elementor-section-stretched{max-width:100%;left:0 !important;}.elementor-template-full-width .ast-container{display:block;}@media (max-width:544px){.elementor-element .elementor-wc-products .woocommerce[class*="columns-"] ul.products li.product{width:auto;margin:0;}.elementor-element .woocommerce .woocommerce-result-count{float:none;}}.ast-header-break-point .main-header-bar{border-bottom-width:0px;}@media (min-width:922px){.main-header-bar{border-bottom-width:0px;}}.main-header-menu .menu-item, #astra-footer-menu .menu-item, .main-header-bar .ast-masthead-custom-menu-items{-js-display:flex;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;}.main-header-menu > .menu-item > .menu-link, #astra-footer-menu > .menu-item > .menu-link{height:100%;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center;-js-display:flex;display:flex;}.ast-header-break-point .main-navigation ul .menu-item .menu-link .icon-arrow:first-of-type svg{top:.2em;margin-top:0px;margin-left:0px;width:.65em;transform:translate(0, -2px) rotateZ(270deg);}.ast-mobile-popup-content .ast-submenu-expanded > .ast-menu-toggle{transform:rotateX(180deg);overflow-y:auto;}.ast-separate-container .blog-layout-1, .ast-separate-container .blog-layout-2, .ast-separate-container .blog-layout-3{background-color:transparent;background-image:none;}.ast-separate-container .ast-article-post{background-color:var(--ast-global-color-5);;background-image:none;;}@media (max-width:921px){.ast-separate-container .ast-article-post{background-color:rgba(0,0,0,0);;background-image:none;;}}@media (max-width:544px){.ast-separate-container .ast-article-post{background-color:rgba(0,0,0,0);;background-image:none;;}}.ast-separate-container .ast-article-single:not(.ast-related-post), .ast-separate-container .comments-area .comment-respond,.ast-separate-container .comments-area .ast-comment-list li, .ast-separate-container .ast-woocommerce-container, .ast-separate-container .error-404, .ast-separate-container .no-results, .single.ast-separate-container  .ast-author-meta, .ast-separate-container .related-posts-title-wrapper, .ast-separate-container.ast-two-container #secondary .widget,.ast-separate-container .comments-count-wrapper, .ast-box-layout.ast-plain-container .site-content,.ast-padded-layout.ast-plain-container .site-content, .ast-separate-container .comments-area .comments-title, .ast-narrow-container .site-content{background-color:var(--ast-global-color-5);;background-image:none;;}@media (max-width:921px){.ast-separate-container .ast-article-single:not(.ast-related-post), .ast-separate-container .comments-area .comment-respond,.ast-separate-container .comments-area .ast-comment-list li, .ast-separate-container .ast-woocommerce-container, .ast-separate-container .error-404, .ast-separate-container .no-results, .single.ast-separate-container  .ast-author-meta, .ast-separate-container .related-posts-title-wrapper, .ast-separate-container.ast-two-container #secondary .widget,.ast-separate-container .comments-count-wrapper, .ast-box-layout.ast-plain-container .site-content,.ast-padded-layout.ast-plain-container .site-content, .ast-separate-container .comments-area .comments-title, .ast-narrow-container .site-content{background-color:rgba(0,0,0,0);;background-image:none;;}}@media (max-width:544px){.ast-separate-container .ast-article-single:not(.ast-related-post), .ast-separate-container .comments-area .comment-respond,.ast-separate-container .comments-area .ast-comment-list li, .ast-separate-container .ast-woocommerce-container, .ast-separate-container .error-404, .ast-separate-container .no-results, .single.ast-separate-container  .ast-author-meta, .ast-separate-container .related-posts-title-wrapper, .ast-separate-container.ast-two-container #secondary .widget,.ast-separate-container .comments-count-wrapper, .ast-box-layout.ast-plain-container .site-content,.ast-padded-layout.ast-plain-container .site-content, .ast-separate-container .comments-area .comments-title, .ast-narrow-container .site-content{background-color:rgba(0,0,0,0);;background-image:none;;}}:root{--e-global-color-astglobalcolor0:#269fb7;--e-global-color-astglobalcolor1:#323232;--e-global-color-astglobalcolor2:#000000;--e-global-color-astglobalcolor3:#565656;--e-global-color-astglobalcolor4:#f7f7f7;--e-global-color-astglobalcolor5:#ffffff;--e-global-color-astglobalcolor6:#b8b8b8;--e-global-color-astglobalcolor7:#269fb7;--e-global-color-astglobalcolor8:#fbfbfb;}</style>
+<link rel="stylesheet" id="astra-google-fonts-css" href="https://fonts.googleapis.com/css?family=Cabin%3A400%2C600%7CMontserrat%3A500&#038;display=fallback&#038;ver=4.0.2" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.2" media="all">
+<style id="global-styles-inline-css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--ast-global-color-0: var(--ast-global-color-0);--wp--preset--color--ast-global-color-1: var(--ast-global-color-1);--wp--preset--color--ast-global-color-2: var(--ast-global-color-2);--wp--preset--color--ast-global-color-3: var(--ast-global-color-3);--wp--preset--color--ast-global-color-4: var(--ast-global-color-4);--wp--preset--color--ast-global-color-5: var(--ast-global-color-5);--wp--preset--color--ast-global-color-6: var(--ast-global-color-6);--wp--preset--color--ast-global-color-7: var(--ast-global-color-7);--wp--preset--color--ast-global-color-8: var(--ast-global-color-8);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}body { margin: 0;--wp--style--global--content-size: var(--wp--custom--ast-content-width-size);--wp--style--global--wide-size: var(--wp--custom--ast-wide-width-size); }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }.wp-site-blocks > * { margin-block-start: 0; margin-block-end: 0; }.wp-site-blocks > * + * { margin-block-start: 24px; }body { --wp--style--block-gap: 24px; }body .is-layout-flow > *{margin-block-start: 0;margin-block-end: 0;}body .is-layout-flow > * + *{margin-block-start: 24px;margin-block-end: 0;}body .is-layout-constrained > *{margin-block-start: 0;margin-block-end: 0;}body .is-layout-constrained > * + *{margin-block-start: 24px;margin-block-end: 0;}body .is-layout-flex{gap: 24px;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: none;}.wp-element-button, .wp-block-button__link{background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-ast-global-color-0-color{color: var(--wp--preset--color--ast-global-color-0) !important;}.has-ast-global-color-1-color{color: var(--wp--preset--color--ast-global-color-1) !important;}.has-ast-global-color-2-color{color: var(--wp--preset--color--ast-global-color-2) !important;}.has-ast-global-color-3-color{color: var(--wp--preset--color--ast-global-color-3) !important;}.has-ast-global-color-4-color{color: var(--wp--preset--color--ast-global-color-4) !important;}.has-ast-global-color-5-color{color: var(--wp--preset--color--ast-global-color-5) !important;}.has-ast-global-color-6-color{color: var(--wp--preset--color--ast-global-color-6) !important;}.has-ast-global-color-7-color{color: var(--wp--preset--color--ast-global-color-7) !important;}.has-ast-global-color-8-color{color: var(--wp--preset--color--ast-global-color-8) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-ast-global-color-0-background-color{background-color: var(--wp--preset--color--ast-global-color-0) !important;}.has-ast-global-color-1-background-color{background-color: var(--wp--preset--color--ast-global-color-1) !important;}.has-ast-global-color-2-background-color{background-color: var(--wp--preset--color--ast-global-color-2) !important;}.has-ast-global-color-3-background-color{background-color: var(--wp--preset--color--ast-global-color-3) !important;}.has-ast-global-color-4-background-color{background-color: var(--wp--preset--color--ast-global-color-4) !important;}.has-ast-global-color-5-background-color{background-color: var(--wp--preset--color--ast-global-color-5) !important;}.has-ast-global-color-6-background-color{background-color: var(--wp--preset--color--ast-global-color-6) !important;}.has-ast-global-color-7-background-color{background-color: var(--wp--preset--color--ast-global-color-7) !important;}.has-ast-global-color-8-background-color{background-color: var(--wp--preset--color--ast-global-color-8) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-ast-global-color-0-border-color{border-color: var(--wp--preset--color--ast-global-color-0) !important;}.has-ast-global-color-1-border-color{border-color: var(--wp--preset--color--ast-global-color-1) !important;}.has-ast-global-color-2-border-color{border-color: var(--wp--preset--color--ast-global-color-2) !important;}.has-ast-global-color-3-border-color{border-color: var(--wp--preset--color--ast-global-color-3) !important;}.has-ast-global-color-4-border-color{border-color: var(--wp--preset--color--ast-global-color-4) !important;}.has-ast-global-color-5-border-color{border-color: var(--wp--preset--color--ast-global-color-5) !important;}.has-ast-global-color-6-border-color{border-color: var(--wp--preset--color--ast-global-color-6) !important;}.has-ast-global-color-7-border-color{border-color: var(--wp--preset--color--ast-global-color-7) !important;}.has-ast-global-color-8-border-color{border-color: var(--wp--preset--color--ast-global-color-8) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="hfe-style-css" href="/wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor.css?ver=1.6.13" media="all">
+<link rel="stylesheet" id="elementor-icons-css" href="/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.18.0" media="all">
+<link rel="stylesheet" id="elementor-frontend-css" href="/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.11.5" media="all">
+<link rel="stylesheet" id="swiper-css" href="/wp-content/plugins/elementor/assets/lib/swiper/css/swiper.min.css?ver=5.3.6" media="all">
+<link rel="stylesheet" id="elementor-post-438-css" href="/wp-content/uploads/elementor/css/post-438.css?ver=1680660788" media="all">
+<link rel="stylesheet" id="elementor-post-1664-css" href="/wp-content/uploads/elementor/css/post-1664.css?ver=1680783386" media="all">
+<link rel="stylesheet" id="hfe-widgets-style-css" href="/wp-content/plugins/header-footer-elementor/inc/widgets-css/frontend.css?ver=1.6.13" media="all">
+<link rel="stylesheet" id="elementor-post-1524-css" href="/wp-content/uploads/elementor/css/post-1524.css?ver=1680660788" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="/wp-content/plugins/tablepress/css/build/default.css?ver=2.1" media="all">
+<link rel="stylesheet" id="google-fonts-1-css" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=swap&#038;ver=6.2" media="all">
+<link rel="stylesheet" id="elementor-icons-shared-0-css" href="/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3" media="all">
+<link rel="stylesheet" id="elementor-icons-fa-solid-css" href="/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.15.3" media="all">
+<link rel="stylesheet" id="elementor-icons-fa-regular-css" href="/wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min.css?ver=5.15.3" media="all">
+<link rel="stylesheet" id="zotpress.shortcode.min.css-css" href="/wp-content/plugins/zotpress/css/zotpress.shortcode.min.css?ver=6.2" media="all">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<!--[if IE]>
+<script src='http://vamra-vaikhanasa-publishing.local/wp-content/themes/astra/assets/js/minified/flexibility.min.js?ver=4.0.2' id='astra-flexibility-js'></script>
+<script id='astra-flexibility-js-after'>
+flexibility(document.documentElement);
+</script>
+<![endif]-->
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/pages/1664">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.2">
+<link rel="canonical" href="/ida-font/unicode-proposal/">
+<link rel="shortlink" href="/?p=1664">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fida-font%2Funicode-proposal%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fida-font%2Funicode-proposal%2F#038;format=xml">
+<!-- start Simple Custom CSS and JS -->
+<!-- Add HTML code to the header or the footer.
+
+For example, you can use the following code for loading the jQuery library from Google CDN:
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+or the following one for loading the Bootstrap library from jsDelivr:
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+-- End of the comment --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FCC24B3LK9"></script>
+<script>window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-FCC24B3LK9');</script>
+
+<!-- end Simple Custom CSS and JS -->
+<!-- start Simple Custom CSS and JS -->
+<style>.logo-ida {
+    font-family: 'Bodoni Moda';
+    font-weight: bold;
+    background-color: #b30000;
+	padding: 0.2em;
+	border-radius: 0.2em;
+	color: #ffffff;
+}
+
+.glyph-table {
+    width: auto;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+.glyph-table .glyph {
+    font-family: Ida;
+    font-size: 3em;
+    width: 1.2em;
+    line-height: 1.5em;
+    text-align: center;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.glyph-table .red {
+    border-radius: 5px;
+    border: 1px solid #B22222;
+    color: #B22222;
+    background-color: #fff8e8;
+}
+
+.glyph-table .blue {
+    border-radius: 5px;
+    border: 1px solid #00008b;
+    color: #00008b;
+    background-color: #fff8e8;
+}
+
+.glyph-table .purple {
+    border: 1px solid #8A2BE2;
+    border-radius: 5px;
+    color: #8A2BE2;
+    background-color: #fff8e8;
+}
+
+.glyph-table .green {
+    border: 1px solid #2E8B57;
+    border-radius: 5px;
+    color: #2E8B57;
+    background-color: #fff8e8;
+}
+
+.akhyat {
+    font-family: Ida;
+    direction: rtl;
+    unicode-bidi: isolate-override;
+    text-align: right;  
+}
+
+.akhyat.ltr {
+    font-family: Idaltr;
+    direction: ltr;
+    unicode-bidi: normal;
+    text-align: left;
+}
+
+.akhyat.ltr-no-mirror {
+    font-family: Ida;
+    direction: ltr;
+    unicode-bidi: normal;
+    text-align: left;
+}
+
+.akhyat.fw-b {
+	font-weight: bold;
+}
+
+.akhyat.fs-n {
+	font-style: normal;
+}
+.akhyat.fs-i {
+	font-style: italic;
+}
+
+.akhyat.sz-m {
+	font-size: 1.4em;
+}
+
+.akhyat.sz-s {
+	font-size: 1em;
+}
+
+.akhyat.sz-xs {
+	font-size: 0.8em;
+}
+
+.akhyat.sz-xxs {
+	font-size: 0.5em;
+}
+
+.akhyat.sz-l {
+	font-size: 2em;
+}
+
+.akhyat.sz-xl {
+	font-size: 3em;
+}
+
+.akhyat.sz-xxl {
+	font-size: 5em;
+}
+
+.akhyat.ta-r {
+	text-align: right;
+}
+
+.akhyat.ta-l {
+	text-align: left;
+}
+
+.akhyat.ta-c {
+	text-align: center;
+}
+
+.chartd {
+	overflow-x:auto;
+    border: 1px solid #c2bebe;
+    border-radius: 10px;
+    width: 4em;
+    height: 100%;
+    padding: 0;
+}
+
+.chartd .hex {
+    background-color: #fff8e8;
+	color: #00008b;
+    font-family: sans-serif;
+    font-size: medium;
+	font-weight: bold;
+    text-align: center;
+    margin: 5px;
+}
+
+.chartd .glyph {
+	color: #00008b;
+    font-family: Ida;
+    font-size: 3em;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: block;
+	line-height: 1em;
+    margin: 0px;
+    padding: 0px;
+}
+
+.chartd .glyphltr {
+	color: #00008b;
+    font-family: Idaltr;
+    font-size: 3em;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: block;
+	line-height: 1em;
+    margin: 0px;
+    padding: 0px;
+}
+
+.chartd .num {
+	color: #c2bebe;
+    font-family: sans-serif;
+    font-size: small;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.overflow {
+    overflow-x: auto;
+}
+
+.enc-block {
+    width: auto;
+}
+
+.enc-block .serial {
+    font-family: sans-serif;
+    font-size: small;
+    text-align: center;
+}
+
+.enc-block .name {
+    font-family: sans-serif;
+    font-size: large;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 1em;
+    padding-left: 1em;
+    width: 4em;
+}
+
+.enc-block .size {
+    font-family: Ida;
+    font-size: x-large;
+    font-weight: bold;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+.enc-block .char {
+    background-color: #fff8e8;
+    border: 1px solid #c2bebe;
+    border-radius: 5px;
+    font-family: Ida;
+    font-size: 2.5em;
+    text-align: center;
+    width: 1.2em;
+    line-height: 1.5em;
+}
+
+.enc-block .color-u {
+    color: #6f2dbd;
+}
+
+.enc-block .color-n {
+    color: #256767;
+}
+
+.enc-block .color-p {
+    color: #B22222;
+}
+
+.enc-block .color-g {
+    color: #034694;
+}
+
+.enc-block .color-png {
+    color: #8A2BE2;
+}
+
+.enc-block .color-o {
+    color: #2E8B57;
+}
+
+
+.pair-table {
+    width: auto;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+.pair-table td {
+    font-family: Ida;
+    font-size: 3em;
+    background-color: #fff8e8;
+    text-align: center;
+    width: 1.2em;
+    line-height: 1.5em;
+    height: 100%;
+    padding: 0;
+}
+
+.pair-table .left {
+    border: 1px solid #034694;
+    border-radius: 5px;
+    color: #034694;
+}
+
+.pair-table .right {
+    border: 1px solid #990d35;
+    border-radius: 5px;
+    color: #990d35;
+}
+
+.cpmd-table {
+	width: auto;
+}
+
+.cpmd-table .cmpd {
+    font-family: Ida;
+    color: #990d35;
+    border: double #990d35;
+    font-size: 3em;
+    width: 1.2em;
+    line-height: 1em;
+    text-align: center;
+}
+
+.cpmd-table .elm {
+    color: #034694;
+    border: 1px solid #034694;
+    border-radius: 5px;
+    font-family: Ida;
+    font-size: 3em;
+    text-align: center;
+    width: 1.2em;
+    line-height: 1em;
+}
+
+.sample-text {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+	border-collapse: collapse;
+	border: none;
+}
+
+.sample-text .th-l {
+    font-family: Hind;
+    font-size: 2em;
+    text-align: right;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    color: #00008b;
+	border: none;
+}
+
+.sample-text .th-r {
+    font-family: Hind;
+    font-size: 2em;
+    text-align: left;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    color: #B22222;
+	border: none;
+}
+
+.sample-text .td-l {
+    text-align: right;
+    padding-right: 2em;
+	border: none;
+}
+
+.sample-text .td-r {
+    text-align: left;
+    padding-left: 2em;
+	border: none;
+}
+
+.sample-text .sp-l {
+    border: none;
+    font-family: Ida;
+    font-size: 3em;
+    direction: rtl;
+    unicode-bidi: isolate-override;
+    text-align: right;
+    color: #00008b;
+	border: none;
+}
+
+.sample-text .sp-r {
+    font-family: Idaltr;
+    font-size: 3em;
+    direction: ltr;
+    unicode-bidi: normal;
+    text-align: left;
+    color: #B22222;
+	border: none;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th {
+	text-align: center;
+}
+.styled-table td {
+	text-align: right;
+}
+
+.styled-table .ta_left {
+    text-align: left;
+}
+
+.styled-table .fw_bd {
+    font-weight: bold;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}</style>
+<!-- end Simple Custom CSS and JS -->
+				<style type="text/css" id="cst_font_data">@font-face {font-family: "Ida";font-display: auto;font-fallback: ;font-weight: 400;src: url(/wp-content/uploads/2023/04/ida-regular-pre-release-0-9-1.woff2) format('woff2'), url(/wp-content/uploads/2023/04/ida-regular-pre-release-0-9-1.woff) format('woff'), url(/wp-content/uploads/2023/04/ida-regular-pre-release-0-9-1.ttf) format('TrueType'), url(/wp-content/uploads/2023/04/ida-regular-pre-release-0-9-1.eot) format('eot'), url(/wp-content/uploads/2023/04/ida-regular-pre-release-0-9-1.svg) format('svg'), url(/wp-content/uploads/2023/04/ida-regular-pre-release-0-9-1.otf) format('OpenType');} @font-face {font-family: "Idaltr";font-display: auto;font-fallback: ;font-weight: 400;src: url(/wp-content/uploads/2023/04/ida-left-to-right-pre-release-0-9-1.woff2) format('woff2'), url(/wp-content/uploads/2023/04/ida-left-to-right-pre-release-0-9-1.woff) format('woff'), url(/wp-content/uploads/2023/04/ida-left-to-right-pre-release-0-9-1.ttf) format('TrueType'), url(/wp-content/uploads/2023/04/ida-left-to-right-pre-release-0-9-1.eot) format('eot'), url(/wp-content/uploads/2023/04/ida-left-to-right-pre-release-0-9-1.svg) format('svg'), url(/wp-content/uploads/2023/04/ida-left-to-right-pre-release-0-9-1.otf) format('OpenType');}</style>
+					<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link rel="preconnect" href="https://fonts.gstatic.com/">
+	<link href="https://fonts.googleapis.com/css2?display=swap&family=Hind" rel="stylesheet">
+<meta name="generator" content="Elementor 3.11.5; features: e_dom_optimization, e_optimized_assets_loading, e_optimized_css_loading, a11y_improvements, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
+<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<link rel="icon" href="/wp-content/uploads/2020/03/favicon-150x150.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2020/03/favicon-300x300.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2020/03/favicon-300x300.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2020/03/favicon-300x300.png">
+	<style id="egf-frontend-styles" type="text/css">p {font-family: 'Verdana', sans-serif;font-style: normal;font-weight: 400;} h1 {font-family: 'Hind', sans-serif;font-style: normal;font-weight: 400;} h2 {font-family: 'Hind', sans-serif;font-style: normal;font-weight: 400;} h3 {font-family: 'Hind', sans-serif;font-style: normal;font-weight: 400;} h4 {} h5 {} h6 {}</style>
+	</head>
+
+<body itemtype="https://schema.org/Blog" itemscope="itemscope" class="page-template-default single single-page postid-1664 wp-custom-logo ehf-header ehf-template-astra ehf-stylesheet-astra ast-desktop ast-page-builder-template ast-no-sidebar astra-4.0.2 ast-blog-single-style-1 ast-custom-post-type ast-single-post ast-replace-site-logo-transparent ast-inherit-site-logo-transparent ast-hfb-header elementor-default elementor-kit-438 elementor-page elementor-page-1664">
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 0.49803921568627"></fefuncr><fefuncg type="table" tablevalues="0 0.49803921568627"></fefuncg><fefuncb type="table" tablevalues="0 0.49803921568627"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 1"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0 1"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.54901960784314 0.98823529411765"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0.71764705882353 0.25490196078431"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 1"></fefuncr><fefuncg type="table" tablevalues="0 0.27843137254902"></fefuncg><fefuncb type="table" tablevalues="0.5921568627451 0.27843137254902"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 0"></fefuncr><fefuncg type="table" tablevalues="0 0.64705882352941"></fefuncg><fefuncb type="table" tablevalues="0 1"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.78039215686275 1"></fefuncr><fefuncg type="table" tablevalues="0 0.94901960784314"></fefuncg><fefuncb type="table" tablevalues="0.35294117647059 0.47058823529412"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.65098039215686 0.40392156862745"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0.44705882352941 0.4"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.098039215686275 1"></fefuncr><fefuncg type="table" tablevalues="0 0.66274509803922"></fefuncg><fefuncb type="table" tablevalues="0.84705882352941 0.41960784313725"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg>
+<a class="skip-link screen-reader-text" href="#content" role="link" title="Skip to content">
+		Skip to content</a>
+
+<div class="hfeed site" id="page">
+			<header id="masthead" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
+			<p class="main-title bhf-hidden" itemprop="headline"><a href="/" title="Vamra Vaikhanasa Publishing" rel="home">Vamra Vaikhanasa Publishing</a></p>
+					<div data-elementor-type="wp-post" data-elementor-id="1524" class="elementor elementor-1524">
+									<section class="elementor-section elementor-top-section elementor-element elementor-element-2f2bdc2 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2f2bdc2" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c3b69ec" data-id="c3b69ec" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-23470b1 hfe-nav-menu__align-right hfe-submenu-icon-arrow hfe-submenu-animation-none hfe-link-redirect-child hfe-nav-menu__breakpoint-tablet elementor-widget elementor-widget-navigation-menu" data-id="23470b1" data-element_type="widget" data-settings="{&quot;padding_horizontal_menu_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:15,&quot;sizes&quot;:[]},&quot;padding_horizontal_menu_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_menu_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_menu_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:15,&quot;sizes&quot;:[]},&quot;padding_vertical_menu_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_menu_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_space_between&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_space_between_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_space_between_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_row_space&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_row_space_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_row_space_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;dropdown_border_radius&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;dropdown_border_radius_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;dropdown_border_radius_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;width_dropdown_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;220&quot;,&quot;sizes&quot;:[]},&quot;width_dropdown_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_dropdown_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_dropdown_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_dropdown_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_dropdown_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_dropdown_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:15,&quot;sizes&quot;:[]},&quot;padding_vertical_dropdown_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_dropdown_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;distance_from_menu&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;distance_from_menu_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;distance_from_menu_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_size&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_size_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_size_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_width&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_width_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_width_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_radius&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_radius_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_radius_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="navigation-menu.default">
+				<div class="elementor-widget-container">
+						<div class="hfe-nav-menu hfe-layout-horizontal hfe-nav-menu-layout horizontal hfe-pointer__none" data-layout="horizontal">
+				<div class="hfe-nav-menu__toggle elementor-clickable">
+					<div class="hfe-nav-menu-icon">
+						<i aria-hidden="true" tabindex="0" class="fas fa-align-justify"></i>					</div>
+				</div>
+				<nav class="hfe-nav-menu__layout-horizontal hfe-nav-menu__submenu-arrow" data-toggle-icon="&lt;i aria-hidden=&quot;true&quot; tabindex=&quot;0&quot; class=&quot;fas fa-align-justify&quot;&gt;&lt;/i&gt;" data-close-icon="&lt;i aria-hidden=&quot;true&quot; tabindex=&quot;0&quot; class=&quot;far fa-window-close&quot;&gt;&lt;/i&gt;" data-full-width="yes"><ul id="menu-1-23470b1" class="hfe-nav-menu">
+<li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home parent hfe-creative-menu"><a href="/" class="hfe-menu-item">Home</a></li>
+<li id="menu-item-2748" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-page-parent parent hfe-creative-menu"><a href="/ida-font/" class="hfe-menu-item">Ida Font</a></li>
+<li id="menu-item-2753" class="menu-item menu-item-type-post_type menu-item-object-page parent hfe-creative-menu"><a href="/ida-font/indus-typography/" class="hfe-menu-item">Indus Typography</a></li>
+<li id="menu-item-2749" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1664 current_page_item menu-item-has-children parent hfe-has-submenu hfe-creative-menu">
+<div class="hfe-has-submenu-container"><a href="/ida-font/unicode-proposal/" class="hfe-menu-item">Unicode Proposal<span class="hfe-menu-toggle sub-arrow hfe-menu-child-0"><i class="fa"></i></span></a></div>
+<ul class="sub-menu">
+	<li id="menu-item-2752" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="/ida-font/unicode-proposal/character-table/" class="hfe-sub-menu-item">Character Table</a></li>
+	<li id="menu-item-2751" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="/ida-font/unicode-proposal/etymology-classes/" class="hfe-sub-menu-item">Etymology Classes</a></li>
+	<li id="menu-item-2750" class="menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu"><a href="/ida-font/unicode-proposal/compounds/" class="hfe-sub-menu-item">Compound Forms</a></li>
+</ul>
+</li>
+<li id="menu-item-4166" class="menu-item menu-item-type-post_type menu-item-object-page parent hfe-creative-menu"><a href="/rig-veda/" class="hfe-menu-item">Rig Veda</a></li>
+<li id="menu-item-4266" class="menu-item menu-item-type-post_type menu-item-object-page parent hfe-creative-menu"><a href="/devajyoti-sarkar/" class="hfe-menu-item">Devajyoti Sarkar</a></li>
+</ul></nav>              
+			</div>
+					</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+							</div>
+				</header>
+
+		<div id="content" class="site-content">
+		<div class="ast-container">
+		
+
+	<div id="primary" class="content-area primary">
+
+		
+					<main id="main" class="site-main">
+				
+
+<article class="post-1664 page type-page status-publish ast-article-single" id="post-1664" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
+
+	
+	
+<div class="ast-post-format- ast-no-thumb single-layout-1">
+
+	
+	
+		<header class="entry-header ast-no-thumbnail ast-no-title ast-header-without-markup">
+
+			
+			
+			
+		</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content clear" itemprop="text">
+
+		
+				<div data-elementor-type="wp-page" data-elementor-id="1664" class="elementor elementor-1664">
+									<section class="elementor-section elementor-top-section elementor-element elementor-element-d68406b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d68406b" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a07ded7" data-id="a07ded7" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-2456c43 elementor-widget elementor-widget-ucaddon_ue_scroll_to_top" data-id="2456c43" data-element_type="widget" data-widget_type="ucaddon_ue_scroll_to_top.default">
+				<div class="elementor-widget-container">
+			<!-- start Scroll To Top -->
+			<style type="text/css">/* widget: Scroll To Top */
+
+#uc_ue_scroll_to_top_elementor_2456c43.ue-scroll-to {
+    display:none;
+   z-index: 9999;
+  
+}
+#uc_ue_scroll_to_top_elementor_2456c43 .ue-scroll-to-cta {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  transition: all 400ms ease-in-out;
+  align-content:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+}
+#uc_ue_scroll_to_top_elementor_2456c43 .ue-scroll-to-cta .ue-scroll-to-icon {
+  line-height:1em;
+  margin:0 auto;
+}
+
+#uc_ue_scroll_to_top_elementor_2456c43 .ue-scroll-to-cta .ue-scroll-to-icon svg {
+  height:1em; 
+  width:1em; 
+}
+
+.ue-scroll-to-cta 
+#uc_ue_scroll_to_top_elementor_2456c43 .ue-scroll-to-icon {
+  position: relative;
+}
+
+#uc_ue_scroll_to_top_elementor_2456c43 .ue-scroll-to-icon:hover {
+  cursor: pointer;
+}
+.ue-snap-v-middle{
+  top:50%;
+}
+.ue-scroll-to-text
+{
+  font-size:10px;
+}</style>
+
+			<div id="uc_ue_scroll_to_top_elementor_2456c43" class="ue-scroll-to ue-snap-v-bottom ue-snap-h-right">
+      <div class="ue-scroll-to-cta none">
+          <div class="ue-scroll-to-icon"><i class="fas fa-arrow-up"></i></div>
+          	
+      </div>
+</div>
+			<!-- end Scroll To Top -->		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-736dcff elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="736dcff" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8ff2f4a" data-id="8ff2f4a" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-31459c3 elementor-widget elementor-widget-heading" data-id="31459c3" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.11.5 - 14-03-2023 */
+.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style>
+<h1 class="elementor-heading-title elementor-size-default">Unicode Encoding Proposal for the Indus Script (Early Draft)</h1>		</div>
+				</div>
+				<div class="elementor-element elementor-element-058d39b elementor-widget elementor-widget-spacer" data-id="058d39b" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.11.5 - 14-03-2023 */
+.elementor-column .elementor-spacer-inner{height:var(--spacer-size)}.e-con{--container-widget-width:100%}.e-con-inner>.elementor-widget-spacer,.e-con>.elementor-widget-spacer{width:var(--container-widget-width,var(--spacer-size));--align-self:var(--container-widget-align-self,initial);--flex-shrink:0}.e-con-inner>.elementor-widget-spacer>.elementor-widget-container,.e-con-inner>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer,.e-con>.elementor-widget-spacer>.elementor-widget-container,.e-con>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer{height:100%}.e-con-inner>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer>.elementor-spacer-inner,.e-con>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer>.elementor-spacer-inner{height:var(--container-widget-height,var(--spacer-size))}</style>		<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+		<div class="elementor-element elementor-element-e4e6267 e-con-boxed e-con" data-id="e4e6267" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-eaa5e9f elementor-widget elementor-widget-text-editor" data-id="eaa5e9f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.11.5 - 14-03-2023 */
+.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap{background-color:#818a91;color:#fff}.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap{color:#818a91;border:3px solid;background-color:transparent}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap{margin-top:8px}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter{width:1em;height:1em}.elementor-widget-text-editor .elementor-drop-cap{float:left;text-align:center;line-height:1;font-size:50px}.elementor-widget-text-editor .elementor-drop-cap-letter{display:inline-block}</style>				<p><b>Research Paper:</b></p>
+<p><a href="/wp-content/uploads/2023/04/UnicodeProposal-0-9-1.pdf">Indus Unicode Proposal</a></p>
+<p><a href="https://doi.org/10.5281/zenodo.7794001">Zenodo</a></p>
+<p><a href="https://www.academia.edu/99563848/UNICODE_ENCODING_PROPOSAL_FOR_THE_INDUS_SCRIPT_EARLY_DRAFT">Academia.edu</a></p>
+<p><a href="https://www.researchgate.net/publication/369745435_Unicode_Encoding_Proposal_for_the_Indus_Script_-_Early_Draft">ResearchGate</a></p>
+<p><a href="https://figshare.com/articles/preprint/Unicode_Encoding_Proposal_for_the_Indus_Script_Early_Draft/22496110">figshar<b>e</b></a></p>						</div>
+				</div>
+					</div>
+				</div>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-ac3498e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ac3498e" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-9aa12f7" data-id="9aa12f7" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-c1ff8ba elementor-widget elementor-widget-text-editor" data-id="c1ff8ba" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>The Indus script is not deciphered yet. There is no consensus on what is and what is not a character. It is likely that many new characters will emerge in future excavations. Despite its aim of universality, <b><i>the Unicode Standard considers writing systems for which insufficient information is available to enable reliable encoding of characters to be out of its scope</i></b>. We are not at the stage where we can make a proposal for Unicode Encoding for the Indus script. We may not get there for decades to come. In the meantime, we still need some kind of a common encoding for people to record and share text. This section will outline a proposal for an encoding in the <i><b>Private Use Area (PUA) of the Unicode Basic Multilingual Plane (BMP)</b></i>. The hope is that in the future this can be leveraged to an RFC to the community that defines what Unicode calls a &#8220;Private Agreement&#8221;. This will allow the community to agree upon a shared encoding and enable tools and technology like fonts and IMEs. This is an <b>Early Draft</b> of the proposal. Much of it will only make sense when one can read the words and texts of the Indus script. I will publish a decipherment separately. In the absence of a bilingual inscription, we have no authoritative source to determine the correctness of a decipherment. This paper describes a general method to do so based on the fit to data. The present decipherment fits a majority of the known inscriptions. The following proposal and discussion are based on this decipherment and may be somewhat cryptic to read until it is available. I humbly ask your patience in this regard.</p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-7844538 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7844538" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f106e1e" data-id="f106e1e" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-9831662 elementor-widget elementor-widget-spacer" data-id="9831662" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-91359ee elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="91359ee" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e83d1e9" data-id="e83d1e9" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-a47dba0 elementor-widget elementor-widget-heading" data-id="a47dba0" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Quick Summary</h2>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-b54a6f3 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b54a6f3" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f2281d0" data-id="f2281d0" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-404ec6e elementor-widget elementor-widget-text-editor" data-id="404ec6e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>This proposal defines the range U+E8FF to U+F1AF in the Unicode BMP for the Indus script.</p>
+<ul>
+<li>A proposed <a href="/character-table">Character Encoding Table</a>
+</li>
+<li>Size of range: 2,225</li>
+<li>Number of Characters defined: 638</li>
+<li>Number of Characters reserved: 1587</li>
+</ul>
+<p>This proposal attempts to conform to or enable the following <b><i>Design Principles of Unicode</i></b>:</p>
+<ul>
+<li style="font-size: 17px;">
+<span style="font-style: inherit; font-weight: inherit; color: var(--ast-global-color-3); background-color: var(--ast-global-color-4);"><b>Characters, not glyphs</b></span><span style="font-style: inherit; font-weight: inherit; background-color: var(--ast-global-color-4); color: var(--ast-global-color-3);">: It specifies character encodings, not glyph forms.</span>
+</li>
+<li style="font-size: 17px;">
+<span style="background-color: var(--ast-global-color-4); color: var(--ast-global-color-3); font-style: inherit;"><span style="font-weight: bold;">Stability</span></span><span style="font-weight: inherit; background-color: var(--ast-global-color-4); color: var(--ast-global-color-3); font-style: inherit;">: Once assigned, cannot be reassigned and key properties are immutable.</span>
+</li>
+<li style="font-size: 17px;">
+<span style="font-weight: bold;">Logical order</span><span style="font-weight: inherit; font-style: inherit; color: var(--ast-global-color-3); background-color: var(--ast-global-color-4);">: Articulating the default for memory representation.</span>
+</li>
+<li style="font-size: 17px;"><span style="font-style: inherit; background-color: var(--ast-global-color-4); color: var(--ast-global-color-3);">Specification of Bi-directional (Bidi) text handling</span></li>
+<li style="font-size: 17px;">
+<span style="background-color: var(--ast-global-color-4); color: var(--ast-global-color-3); font-style: inherit;"><b>Efficiency</b></span>: Focusses on making Unicode text simple to parse and process.</li>
+<li style="font-size: 17px;">
+<span style="background-color: var(--ast-global-color-4); color: var(--ast-global-color-3); font-style: inherit;"><b>Plain text</b></span><span style="font-weight: inherit; background-color: var(--ast-global-color-4); color: var(--ast-global-color-3); font-style: inherit;">: It represents plain text not rich or structured text.</span>
+</li>
+<li style="font-size: 17px;">
+<span style="font-style: inherit; font-weight: inherit; color: var(--ast-global-color-3); background-color: var(--ast-global-color-4);"><b>Universal repertoire</b></span><span style="font-style: inherit; font-weight: inherit; background-color: var(--ast-global-color-4); color: var(--ast-global-color-3);">: The Unicode Standard provides a single, universal repertoire.</span>
+</li>
+</ul>
+<p>This proposal does not address or considers <b>out of scope</b> the following:</p>
+<ul>
+<li>
+<span style="font-style: inherit; font-weight: inherit; background-color: var(--ast-global-color-4); color: var(--ast-global-color-3);">Semantics</span><span style="font-style: inherit; font-weight: inherit; background-color: var(--ast-global-color-4); color: var(--ast-global-color-3);">: so that characters have well-defined properties.</span>
+</li>
+<li><span style="font-style: inherit; background-color: var(--ast-global-color-4); color: var(--ast-global-color-3);">Unification: Unifying duplicate characters within scripts across languages (e.g. Egyptian Hieroglyphs)</span></li>
+<li><span style="font-style: inherit; background-color: var(--ast-global-color-4); color: var(--ast-global-color-3);">Dynamic composition: Accented forms can be dynamically composed.</span></li>
+<li><span style="font-style: inherit; background-color: var(--ast-global-color-4); color: var(--ast-global-color-3);">Convertibility: Guaranteeing convertibility with other standards.</span></li>
+<li><span style="font-style: inherit; background-color: var(--ast-global-color-4); color: var(--ast-global-color-3);">Unicode Character Database and formal semantics</span></li>
+<li><span style="font-style: inherit; background-color: var(--ast-global-color-4); color: var(--ast-global-color-3);">Tailorings for Unicode Common Locale Data Respository (CLDR)</span></li>
+<li><span style="font-style: inherit; background-color: var(--ast-global-color-4); color: var(--ast-global-color-3);">Specification of Collation methods or weights.</span></li>
+<li><span style="background-color: var(--ast-global-color-4); color: var(--ast-global-color-3); font-style: inherit; font-weight: inherit;">Emoji</span></li>
+</ul>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-1c1deb7 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1c1deb7" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e9e6757" data-id="e9e6757" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-af414d1 elementor-widget elementor-widget-heading" data-id="af414d1" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Background</h2>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-38c69b0 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="38c69b0" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-eb14018" data-id="eb14018" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-e347d14 elementor-widget elementor-widget-text-editor" data-id="e347d14" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>The Indus Script has survived in the form of seals with relatively short inscriptions of 4-5 characters. The earliest seals discovered so far come from about 3,500BC but the majority are from the Mature Harappan Period of 2,600-1,900BC. Only a few thousand seals have been found, out of which 40% of the seals have an illustration apart from text, of those more than half are that of a Unicorn bull. There is no long-form script available to us.</p>
+<p>This relative scarcity of information has made it difficult to decipher the script. Also, unlike Egyptian Hieroglyphs which had the Rosetta stone and Cuneiform which had the Behistun inscription, there has been no bilingual inscription discovered so far. In its absence, we have no way to learn from someone who knew. Any attempt to decipher the script, including the current one, is a guess that may or may not be correct. There is no logical way to eliminate possibilities down to a single one.</p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+		<div class="elementor-element elementor-element-51c937e e-con-boxed e-con" data-id="51c937e" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-875203b e-con-full e-con" data-id="875203b" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+				<div class="elementor-element elementor-element-665c2f2 elementor-widget elementor-widget-text-editor" data-id="665c2f2" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p><span style="text-align: var(--text-align); background-color: var(--ast-global-color-4);">There has been speculation that the Indus script was not a script at all. The inscriptions are too small compared to other known scripts and could not represent something as complex as language. That there were too many &#8220;singleton&#8221; characters (characters that occur just once in the whole corpus). This, however, is not necessarily true. In many ways, the Indus seals are quite similar to Japanese hankos or personal seals. Hankos are used to sign contracts or authorize bank transactions. Most hankos range between 2-4 characters and are enough to serve an economy of the scale of Japan. </span></p>
+<p>As an example, if we were to take the train station names across Japan and make &#8220;seals&#8221; of them, we would get about 8,850 names as in Figure 1(a). This is somewhat comparable to the 4,615 Indus seal inscriptions in the Indus corpus. We find that each seal in Japan would, on the average, have about 3 characters, whereas the corresponding number is about 4 in the Indus case. The modern script is actually more terse. This is not surprising because it has a greater number of unique characters. Both have a large number of singletons, although the Indus script has a slightly higher number at 33.85% vs. 25.95%. It is important to note that <b><i>even in the Japanese case, for random samples of 4,615 names we get an average of 31.65% singletons</i></b>. As we see in Figure 1(b) and 1(c), their relative character distributions also have similar long tails.</p>
+<p> </p>						</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-b89c4ed e-con-full e-con" data-id="b89c4ed" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+				<div class="elementor-element elementor-element-07145d4 elementor-widget elementor-widget-image" data-id="07145d4" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+			<style>/*! elementor - v3.11.5 - 14-03-2023 */
+.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$=".svg"]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style>									<figure class="wp-caption">
+										<img decoding="async" width="1024" height="854" src="/wp-content/uploads/2023/03/Fig1-1024x854.png" class="attachment-large size-large wp-image-3346" alt="" srcset="/wp-content/uploads/2023/03/Fig1-1024x854.png 1024w, /wp-content/uploads/2023/03/Fig1-300x250.png 300w, /wp-content/uploads/2023/03/Fig1-768x641.png 768w, /wp-content/uploads/2023/03/Fig1-1536x1281.png 1536w, /wp-content/uploads/2023/03/Fig1-2048x1708.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px">											<figcaption class="widget-image-caption wp-caption-text">Fig. 1 Comparion of Indus Script with Modern Japanese</figcaption>
+										</figure>
+									</div>
+				</div>
+				</div>
+					</div>
+				</div>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-9e3b547 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9e3b547" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-12e73f6" data-id="12e73f6" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-1c66d52 elementor-widget elementor-widget-text-editor" data-id="1c66d52" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>The Japanese corpus includes 1,507 unique Kanjis versus the 586 unique characters in the Indus. While the Japanese number is larger, it does represent the full range place names of one of the largest of modern economies, more than an order of magnitude greater in population compared to the Indus and a much later stage in the evolution of the script &#8211; i.e. the literature available in Japanese today and the complexity of what it represents is considerably greater than the Indus script would have had in its time. Even though such metrics cannot represent the complexity of either script, but all things considered, they are surprisingly comparable.</p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-caca794 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="caca794" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b5ee53e" data-id="b5ee53e" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-2d34966 elementor-widget elementor-widget-heading" data-id="2d34966" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Characters, not glyphs</h2>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-d20e7d9 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d20e7d9" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-cb839da" data-id="cb839da" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-2966116 elementor-widget elementor-widget-text-editor" data-id="2966116" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>Unicode considers characters to be the smallest component of a written language that has semantic value. As an example, a given character or piece of text may be written in multiple fonts, each of which can have very different appearances, but they all represent the same text, the same characters. So when you search for a word, you don&#8217;t need to remember or specify what font you wrote it with, just the word because the text is represented in characters, not glyphs. The glyphs that one font uses to represent a character can be wildly different from another but they represent the same character. It is the character that receives a Unicode code.</p>
+<p>There are two major kinds of scripts in broad use &#8211; phonetic scripts and ideographic scripts. Phonetic scripts, like the alphabet, represent sounds and we write a word by how we hear it. In a logographic or Ideographic script, like the Han characters of CJKV (Chinese-Japanese-Korean-Vietnamese) scripts, a character represents a meaning. They generally have one root meaning and retain their semantic content across linguistic boundaries. Instead of understanding what text means by hearing it, we can recognize it by seeing it. It gives communication a visual metaphor. </p>
+<p>The Indus script is Ideographic. The characters encode meaning. It is peculiar that even as far as today we do not have a name for these characters. I will call them <b>Akhyats</b>. “Akhyat” in Sanskrit means &#8220;that which brings to cognition&#8221; or “announced, named”. The more familiar “Vikhyat” means “famous or easily recognized” and comes from the same root.  </p>
+<p>Akhyats are in many ways like CJKV ideographs, and like them, they were most likely used to encode multiple languages. In fact, this is also why Indus inscriptions are terse. They need fewer characters. Unlike a phonetic script like the alphabet where two characters can at most represent 26&#215;26 (676) combinations, in an ideographic script like the Indus, two characters could potentially represent (638&#215;638) more than 400,000. In a CJKV script this number is many orders of magnitude larger. Like any script, not all combinations are valid, but there is no doubt that one needs fewer ideographs to specify the same word compared to phonetic characters.</p>
+<div> </div>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+		<div class="elementor-element elementor-element-6eaf193 e-con-boxed e-con" data-id="6eaf193" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;boxed&quot;}">
+					<div class="e-con-inner">
+		<div class="elementor-element elementor-element-6d3a2d6 e-con-full e-con" data-id="6d3a2d6" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+				<div class="elementor-element elementor-element-48e9337 elementor-widget elementor-widget-image" data-id="48e9337" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+												<figure class="wp-caption">
+										<img decoding="async" width="1024" height="524" src="/wp-content/uploads/2023/03/Fig2-1024x524.png" class="attachment-large size-large wp-image-3384" alt="" srcset="/wp-content/uploads/2023/03/Fig2-1024x524.png 1024w, /wp-content/uploads/2023/03/Fig2-300x153.png 300w, /wp-content/uploads/2023/03/Fig2-768x393.png 768w, /wp-content/uploads/2023/03/Fig2-1536x786.png 1536w, /wp-content/uploads/2023/03/Fig2-2048x1047.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px">											<figcaption class="widget-image-caption wp-caption-text">Fig. 2 What is a different Akhyat and what is not</figcaption>
+										</figure>
+									</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-af67c75 e-con-full e-con" data-id="af67c75" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+				<div class="elementor-element elementor-element-f6d023c elementor-widget elementor-widget-text-editor" data-id="f6d023c" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>One of the primary tasks to create a Uncode encoding of Akhyats is to define what an Akhyat is. When do two glyphs mean the same thing and when do they not. In Figure 2 (a), the top shows the same Akhyat in different glyphs or styles found across the corpus. In the bottom we see different Akhyats that look similar but are different. Akhyats can look quite different without any change in its semantic content and yet can look very similar and mean something different. This can sometimes be reasonably obvious to see, but many times it is not. In Figure 2(b) we see the many widely varying Akhyat counts from different studies because of this.</p>						</div>
+				</div>
+				</div>
+					</div>
+				</div>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-6667723 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6667723" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d7f92d8" data-id="d7f92d8" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-e025db0 elementor-widget elementor-widget-text-editor" data-id="e025db0" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>The only way to reliably define the set of Akhyats in the Indus script is by reading them. One needs a decipherment. In the absence of a bilingual inscription, in the absence of an authoritative source telling us what the Akhyats meant, any attempt at listing them is an interpretation. It is a guess, and guesses can be wrong. We need some way to validate whether one is right.</p>
+<p>There is a way to do this. We create a dictionary definition for all Akhyats at once. We then see if we can meaningfully read all the seals and inscriptions given this definition. If the Akhyat&#8217;s glyph drawing also happens to convey the same meaning, it is further confirmation, but oftentimes the match is not specific. Han characters evolved into abstract strokes that are unambiguous rather than remain pictograms with many potential interpretations.</p>
+<p>Although such a dictionary definition is not guaranteed to be unique or correct, in practice it is incredibly difficult to do. It is not easy to &#8220;fit&#8221; a set of meanings so that one can read all the text. When it occurs, even in part, such an assignment is quite robust and changes very slowly. If the set of seals that one can read crosses 50% of the corpus, this stability is not likely to be a coincidence. If it further provides reasonable explanations for known facts and gives verifiable and/or verified predictions of things not known, it becomes <b><i>a generic methodology to validate a decipherment even when there is no authoritative source</i></b>. </p>
+<p>In its essence, this method is inspired by the way a machine learns in AI. We are, in effect, trying to fit a model to the data. It is more like a scientific theory than a &#8220;logical&#8221; argument. And unlike many arguments that selectively focus on some elements while ignoring the rest, this addresses all of them, all the time. It can give surprisingly good results when it finds a good fit. But it can only speak to validity, not truth.</p>
+<p>Using this, if two glyphs occur in roughly the same contexts and mean roughly the same, they maybe the same Akhyat if they are written in similar but different glyphs. Similarly, if the same Akhyat reads differently across many contexts, it is possible that it corresponds to more than one Akhyat and we might be missing something subtle.</p>
+<p>The above method does not prescribe how one finds a reasonable mapping in the first place, only the means to evaluate it. I have spent over 10 years attempting to decipher the script and for the past 4 years I have been able to read more than 80% of the Indus characters and published seals. This interpretation represents a large-scale attempt to do the above. </p>
+<p>The definition of Akhyats in this proposal is based on this &#8220;decipherment&#8221;. But it is by no means normative. Although the bulk has not changed for years, every time I go through the corpus, I discover things I missed or got wrong. And there is always to chance of a breakthrough realization needing large scale changes. One of the Design Principles of Unicode is <b>Stability</b>, that once a character is assigned it cannot be reassigned, its definition must be immutable. This is a high bar. We are not there yet, and we are not going to get there any time soon. This proposal is a Private Agreement and can afford to change. The hope is that over time we will get a definition stable enough to consider a formal Unicode proposal.</p>
+<div> </div>
+<p>We are choosing to use the PUA of the Unicode Basic Multilingual Plane for this. We have a choice of three possible PUAs, one in the BMP and two larger areas in Plane 15 and 16 respectively. We are going with BMP because we do not need the larger space and BMP is more likely to have support in older e-readers and devices/software. We are reserving a range of 2,225 codepoints and is about the same order as Joyo Kanji (2,136) which is a normative list from the Japanese Ministry of Education to define the minimum requirement to get into college. We have assigned 638 so far, but this has been done with enough headroom to accommodate future Akhyats that we discover as well as establish areas for legacy characters to provide compatibility with or deprecate. While one would like to create a safe playpen to &#8220;<i>Fail fast, fail often, learn and try again</i>&#8220;, the truth is that any change may be disruptive to texts that have already been written in a previous version. This needs to be managed in terms of <b>Versioning</b> and <b>Deprecation</b> and <b>Backward Compatibility</b> where possible. Ideally, one wants a slow-moving target.</p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-a9f33d2 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="a9f33d2" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4f8e8cf" data-id="4f8e8cf" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-c0b9f16 elementor-widget elementor-widget-heading" data-id="c0b9f16" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Direction of Writing and Unicode BiDi</h2>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-42d6a9a elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="42d6a9a" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-fa1936c" data-id="fa1936c" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-4c5f1f0 elementor-widget elementor-widget-text-editor" data-id="4c5f1f0" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>One of the aspects of the Indus script where there is relative consensus among scholars is the direction of writing. It is Right-to-Left for the most part. This is apparent in some seals where the sculptor ran out of space as they went to the left as we can see in the seal of Figure 3(b). It is even more evident in Figure 3(c) where the text wraps Right-to-Left, Top-to-Bottom, and then Left-to-Right; where the bottom line is written upside down and is the only place in all the corpus where these Akhyats are upside down. The table shows some of the most frequent words in the script and there is an overwhelming preference for one direction. The last line in the table shows the first two Akhyats of the seal of Figure 3(c). Thus means these characters were read Right-to-Left. The third line, also in the seal, is also in the same Right-to-left direction. The Right-to-Left direction quickly extrapolates across the entire corpus from the strong direction preference and the reading direction in this seal. </p>						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-61a3011" data-id="61a3011" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-0027eb7 elementor-widget elementor-widget-html" data-id="0027eb7" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+			<table class="styled-table">
+    <thead>
+        <th>Word</th>
+        <th>Freq</th>
+        <th>Reverse</th>
+        <th>Freq</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="akhyat sz-l"></td>
+            <td>174</td>
+            <td class="akhyat sz-l"></td>
+            <td>5
+            </td>
+        </tr>
+        <tr>
+            <td class="akhyat sz-l"></td>
+            <td>90</td>
+            <td class="akhyat sz-l"></td>
+            <td>4
+            </td>
+        </tr>
+        <tr>
+            <td class="akhyat sz-l"></td>
+            <td>145</td>
+            <td class="akhyat sz-l"></td>
+            <td>3
+            </td>
+        </tr>
+        <tr>
+            <td class="akhyat sz-l"></td>
+            <td>40</td>
+            <td class="akhyat sz-l"></td>
+            <td>1
+            </td>
+        </tr>
+        <tr>
+            <td class="akhyat sz-l"></td>
+            <td>45</td>
+            <td class="akhyat sz-l"></td>
+            <td>3
+            </td>
+        </tr>
+        <tr>
+            <td class="akhyat sz-l"></td>
+            <td>14</td>
+            <td class="akhyat sz-l"></td>
+            <td>0
+            </td>
+        </tr>
+    </tbody>
+</table>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-0e88b50" data-id="0e88b50" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-7c7ba69 elementor-widget elementor-widget-image" data-id="7c7ba69" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+												<figure class="wp-caption">
+										<img decoding="async" width="144" height="304" src="/wp-content/uploads/2023/03/Direction.png" class="attachment-large size-large wp-image-2199" alt="" srcset="/wp-content/uploads/2023/03/Direction.png 144w, /wp-content/uploads/2023/03/Direction-142x300.png 142w" sizes="(max-width: 144px) 100vw, 144px">											<figcaption class="widget-image-caption wp-caption-text">Fig. 3 Right-to-Left writing</figcaption>
+										</figure>
+									</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-2fed5c5 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2fed5c5" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-ac95aa3" data-id="ac95aa3" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-96930b5 elementor-widget elementor-widget-text-editor" data-id="96930b5" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							There are actually four separate possibilities for the direction of writing that we find in the corpus:
+<ul>
+ 	<li style="padding: 5px;">
+<b>Right-to-Left:  e.g.  </b><span class="akhyat sz-m"></span>
+</li>
+ 	<li style="padding: 5px;">
+<b>Left-to-Right (Mirrored):  e.g. </b><span class="akhyat ltr sz-m"></span>
+</li>
+ 	<li style="padding: 5px;">
+<b>Left-to-Right (Symmetric):  e.g. </b><span class="akhyat ltr sz-m"></span>
+</li>
+ 	<li style="padding: 5px;">
+<b>Left-to-Right (Shuffled):  e.g. </b><span class="akhyat ltr-no-mirror sz-m"></span>
+</li>
+</ul>
+It is important to note that all four directions are merely different visual representations of the same underlying text. <span class="akhyat sz-m"></span>, <span class="akhyat ltr sz-m"></span>, <span class="akhyat ltr-no-mirror sz-m"></span> are the same sequence of characters. We can render all of them within standard Unicode through the proper choice of direction and mirror forms. This should cover all currently available<span style="background-color: var(--ast-global-color-4); color: var(--ast-global-color-3);"> inscriptions. </span>						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-9e0f1bc" data-id="9e0f1bc" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-252e70a elementor-widget elementor-widget-text-editor" data-id="252e70a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>Right-to-Left is the most common pattern but we find Left-to-Right as well as mirror or not mirrored forms.</p>
+<ol style="font-size: larger;">
+<li>
+<b>Right-to-Left</b>:  94.2%</li>
+<li>
+<b>Left-to-Right:   5.8%</b><br><ul style="font-size: smaller;">
+<li>
+<b><i>Mirrored</i></b>:    2.7%</li>
+<li>
+<i><b>Symmetric</b>:</i>   2.7%</li>
+<li>
+<b><i>Shuffle</i></b>:  0.4%</li>
+</ul>
+</li>
+</ol>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-189f021 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="189f021" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-46ca066" data-id="46ca066" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-59f11d9 elementor-widget elementor-widget-text-editor" data-id="59f11d9" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p style="font-size: 17px;">Unicode standardizes the Logical order of Characters in the text. This is the sequence of the characters in memory. Essentially this is how we store our text in a file, how algorithms like search work with text and many other things. The specification says that we should store the characters similar to how we would enter them on a keyboard. In the case of the Indus script this would Left-to-Right. We would type <span class="akhyat sz-m"></span> as ① <span class="akhyat sz-m"></span> ② <span class="akhyat sz-m"></span> ③ <span class="akhyat sz-m"></span>. This is the sequence that would be stored on file as well as made available to all programs. The text rendering directionality would be implemented by Unicode&#8217;s standard BiDi algorithms.</p>
+<p style="font-size: 17px;">In our case, since we are assigning the Akhyats to code points in the PUA, we cannot leverage the standard Unicode BiDi algorithm. We cannot specify directionality within each Character&#8217;s properties as we cannot define them. But, we can use standard css styles and Unicode directional formatting characters.  Please note that these directional characters may have varying levels of support in real software. Many ereaders and others may strip them out. They can also be an attack vector for malware and social engineering plays in some cases. As an example, although not a representative one, a file called “name-txt.exe” can look like “name-exe.txt” if one places a right-to-left override where the hyphen is.  It may get somebody to execute it by thinking it was a document. Varying softwares may intentionally highlight Bidi characters as a control character by displaying a box prominently around. This may make it awkward to read the text. The Unicode Bidirectional Algorithm formatting characters can be equivalently represented by stylesheets or markup. Conflicts can arise if markup and explicit formatting characters are used together. Where available, markup should be used instead of the explicit formatting characters. As an example:</p>
+<p>
+</p>
+<ul>
+ 	<li>
+<b>Right-to-Left</b>: &lt;span style=&#8217;direction: rtl; unicode-bidi:isolate-override;&#8217;&gt;<span class="akhyat ltr sz-m"></span>&lt;/span&gt; gives <span class="akhyat sz-m"></span>.</li>
+ 	<li>
+<b>Left-to-Right</b>: &lt;span style=&#8217;direction: ltr; unicode-bidi:isolate-override;&#8217;&gt;<span class="akhyat sz-m"></span>&lt;/span&gt; gives <span class="akhyat sz-m"></span>.</li>
+</ul>
+<p>
+Since the PUA cannot leverage standard Unicode mechanims for handling mirror forms, the <b>ida font</b> comes in two varieties – <b>Ida-Regular</b> and <b>Ida-Left-To-Right</b>. The same character can be reflected simply by changing the font.
+</p>
+<p>
+There are many limitations in the proposed scheme because it is using the PUA with no formal support from Unicode. But it is a starting point. One thing to bear in mind is that it is important that all text we encode must be in the standard Logical order (left-to-right) so as to give a standard scheme for tools like search and others. It will be impossible to change this along the way. <b><i>We must follow Unicode standard right from the start</i></b> regardless of the teething difficulties we may have with limited Unicode support for the PUA encoding.</p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-90608c3 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="90608c3" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-317f8f9" data-id="317f8f9" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-8baf90b elementor-widget elementor-widget-heading" data-id="8baf90b" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Canonical Decomposition and Canonical Order</h2>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-2de30c8 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2de30c8" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7ba8f2c" data-id="7ba8f2c" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-11738e7 elementor-widget elementor-widget-text-editor" data-id="11738e7" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>An Akhyat corresponds closest to what Unicode would call a base character in the Ideograph sense but there are punctuation characters, digits and digit-like characters, and perhaps most importantly compounds, sometimes similar to the CJKV sense and sometimes not.</p>
+<p>First of all, there are rare instances where the Indus script is used phonetically where each Akhyat represents a single phonetic character. Perhaps the most famous of these is the Dholavira signboard: <span class="akhyat ltr-no-mirror sz-l"></span>  which is an example of phonetic usage. Both vowels and consonants are represented. Unlike abjads like the original Phoenician script, here both vowels and consonants are represented as well as long and short vowels are distinguished. The semantic characteristic of the Akhyat is not completely lost in such usage. The Akhyats chosen are “poetically related” in meaning with relation to the word but they primarily represent sound. The same name in Akhyats would be written with two Akhyats. In this inscription, it is interesting to observe that the Akhyats are in their proper Right-to-left direction even though the text itself is written from Left-to-Right. It is tempting to think the Akhyats face you as you read them and in 99% of the inscriptions they do, but they don’t in this one.</p>
+<p>There are some other examples like <span class="akhyat sz-m"></span>, <span class="akhyat sz-m">  </span> and others. But less than 1% of the inscriptions discovered so far are used in this phonetic way. For the rest of this proposal we will ignore them and focus on outlining Akhyats that are ideographs.</p>						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-69594fc" data-id="69594fc" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-2542206 elementor-widget elementor-widget-image" data-id="2542206" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img decoding="async" width="698" height="1024" src="/wp-content/uploads/2023/04/Precomposed-698x1024.png" class="attachment-large size-large wp-image-3486" alt="" srcset="/wp-content/uploads/2023/04/Precomposed-698x1024.png 698w, /wp-content/uploads/2023/04/Precomposed-204x300.png 204w, /wp-content/uploads/2023/04/Precomposed-768x1127.png 768w, /wp-content/uploads/2023/04/Precomposed-1047x1536.png 1047w, /wp-content/uploads/2023/04/Precomposed-1395x2048.png 1395w, /wp-content/uploads/2023/04/Precomposed.png 1653w" sizes="(max-width: 698px) 100vw, 698px">															</div>
+				</div>
+				<div class="elementor-element elementor-element-647ed6a elementor-widget elementor-widget-image" data-id="647ed6a" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+												<figure class="wp-caption">
+										<img decoding="async" src="/wp-content/uploads/2023/03/Precomposed.png" title="" alt="" loading="lazy">											<figcaption class="widget-image-caption wp-caption-text">Fig. 4 Compounds</figcaption>
+										</figure>
+									</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-88ad9db elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="88ad9db" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-9618bb7" data-id="9618bb7" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-76a0c6e elementor-widget elementor-widget-text-editor" data-id="76a0c6e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>Unicode distinguishes between base characters and those that are derived from the combination of other characters. As an example, in Figure 4, we find an accented e which has a different Unicode code than e or its accent but is essentially a &#8220;precomposed&#8221; character. Unicode defines a canonical decomposition into its constituents such that two strings may be compared reliably. These normalized decompositions are defined for all such precomputed characters. There is another kind that is found in Indic and complex scripts where two characters combine to form a new glyph but this precomposed form is not assigned a Unicode codepoint. Instead it is handled by the font and rendered on the fly. There are well-defined rules for such composition that typically come from the language itself and encoding them with codepoints would unnecessarily use up many thousands of slots.</p>
+<p>In CJKV scripts base forms combine to form a new character that is assigned a separate Unicode codepoint. In the third line of Figure 4 we have the Han character for &#8220;tear&#8221;, like a tear drop, which is composed from the characters of &#8220;water&#8221; and &#8220;to stand&#8221;. While the composition is poetically formed from the other two characters there is no doubt it is a separate meaning. One character contributes the core meaning from which the final character is derived and the other specifies the sound. This is called a Phono-Semantic Compound. The character in green, water, specifies the meaning water and is called the radical of the phono-semantic compound and serves as the key to looking up the word in a dictionary. In fact, more than 90% of the Chinese characters come from this same generative process. Each such compound is assigned a separate Unicode codepoint because it has a different meaning.</p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-b5948a1 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b5948a1" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8e6d238" data-id="8e6d238" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-63a9dc2 elementor-widget elementor-widget-heading" data-id="63a9dc2" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h3 class="elementor-heading-title elementor-size-default">Indus Compounds and Decomposition</h3>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-519a157 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="519a157" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3954c37" data-id="3954c37" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-5aed962 elementor-widget elementor-widget-text-editor" data-id="5aed962" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p style="font-size: 17px;">Indus script also has phono-semantic compounds although more often than not the compounds are not phono-semantic. In the 4th and 5th lines of Figure 4, we can decompose the Akhyat according to phonetic and radical components in exactly the same fashion as a Han compound. The resulting ideograph can and should be assigned a Unicode codepoint separate from the constituent Akhyats because it is not an obvious composition of the two, and has a meaning different from both. But the majority of the compounds in the Indus script are not phono-semantic. They are often closer to compound nouns like &#8220;computer science&#8221; where both characters participate in the specification of meaning. Examples of this are in lines 6 and 7. A basic breakdown of the types of Indus compounds is as follows:</p>
+<ol>
+<li>
+<b><a href="/compounds/#base-akhyats">Base Akhyats</a> </b>&#8211; 265</li>
+<li>
+<b><a href="/compounds/#compound-akhyats">Compound Akhyats</a> </b>&#8211; 315</li>
+<li>
+<b><a href="/compounds/#phono-semantic">Phono Semantic Akhyats</a></b> &#8211; 55</li>
+<li>
+<b>Punctuation</b>: 3 Akhyats &#8211; <span class="akhyat sz-m">  </span>
+</li>
+</ol>
+<p style="font-size: 17px;">So how does one handle these compounds? Can they be precomposed forms like the accented &#8220;e&#8221; or can they be rendered as a font artifact like the ligatures of a complex script. In order to answer this we need to note a fundamental different between all ideographic scripts and phonetic ones, one deals with sounds and the other with meanings. In the case of sound we can compose adjacent characters in a sequence because sound itself composes locally, that is, there is no long range correlation between a sound and one that occurred some time ago. The same is not true with ideographs as the composition of two adjacent characters is dependent on context that could be defined much earlier in the sequence.</p>
+<p style="font-size: 17px;">Let us take the bottom two lines in Fig. 4. <span class="akhyat sz-m"> +=</span>, can we canonically break down this compound into those two Akhyats, i.e. whenever we encounter them are they canonically equal to the compound Akhyat? This is generally not the case. Interestingly for this Akhyat it may well be true. There are only 2 inscriptions where we encounter the two constituent Akhyats separately. 206 times they are precomposed into the compound, so effectively, the Indus scribes had already precomposed them.</p>
+<p style="font-size: 17px;">The same is not true of the second example <span class="akhyat sz-m"> += </span>. The compound occurs only 41 times in the corpus whereas the consitituents occur separately 68 times like in <span class="akhyat sz-m"></span>. In actual fact, it is not possible to combine the two Akhyats into the compound in this case because they would mean something different. A rough analogy of this can be seen in English. &#8220;computer science&#8221; is different from &#8220;science computer&#8221; so the sequence order matters; which is fine because unicode maintains this sequence in its definition of Logical order. But, is &#8220;(computer science) department&#8221; the same as &#8220;computer (science department)&#8221; &#8211; most probably not. This combination is not merely dependent on sequence adjacency but has a longer range correlations to a broader context. As an “algebra” it is neither &#8220;commutative&#8221; nor &#8220;associative&#8221;.</p>
+<p style="font-size: 17px;"><b><i>Indus compounds cannot be canonically decomposed, in the Unicode sense, to its constituent base Akhyats</i></b>.<b><i> They must be assigned separate codepoints.</i></b> I suspect this is generally true for all Ideographic scripts.</p>
+<p style="font-size: 17px;">This is not to say that having a representative decomposition is not useful. As an example, a search engine may want to enrich indus text to match components, like a search for <span class="akhyat sz-m"></span> should match both <span class="akhyat sz-m"></span> and <span class="akhyat sz-m"> </span>. But when we encounter compounds in the Indus script, like the phono-semantic case, they have a meaning that is different from the mere composition of its base Akhyats, and therefore need a separate Unicode codepoint to represent them. “computer science” means something specific and is not just an intersection of “computer” and “science”. From this perspective they are similar to Han characters and we can treat them exactly in the same way. In fact, it almost feels like the phono-semantic nature of Han characters is a natural and later stage of evolution from what we see in the Indus.</p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-6e84fcf elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6e84fcf" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-17c11a0" data-id="17c11a0" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-439cf37 elementor-widget elementor-widget-heading" data-id="439cf37" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h3 class="elementor-heading-title elementor-size-default">A Road to a Canonical Order</h3>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-4742e3e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4742e3e" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1353279" data-id="1353279" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-def8cd8 elementor-widget elementor-widget-text-editor" data-id="def8cd8" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>How do you sort Indus text? This is a matter of great significance. Without the &#8220;alphabetical order&#8221; in would be hard for us to search for books in a library or even look up a word in a book index. One could argue that the &#8220;Qwerty&#8221; system is more efficient in someways but having a generally accepted scheme has a value independent of the value of the scheme itself. Indeed, there can be multiple competing orders but it is important to have one widely adopted, universal order. It is inevitable that the ordering of the Akhyats in the Unicode encoring will likely be the defining one.</p>
+<p>Unlike the ordering in a script with a few dozen characters where any order can do, a script with several hundred or thousands needs to be well-thought through. In the Indus case this has immediate relevance because in the absence of IMEs that can covert phonetic input to the corresponding character, we have no option but scrolling through a list of all of them every single time we want to input one.</p>
+<p>In the 2nd century AD, Xu Shen organized the first etymological dictionary he called Shuowen Jiezi by selecting 540 radicals, the semantic component of a phono-semantic compound. This served as the basis for partitioning the dictionary. As an example, the character for &#8220;tear&#8221; in the Figure 4 would be listed only under the &#8220;water&#8221; radical.</p>
+<p>Mei Yingzuo&#8217;s 1615 dictionary Zihui made two further innovations. He reduced the list of radicals to 214, and arranged characters under each radical in increasing order of the number of additional strokes – the &#8220;radical-and-stroke-count&#8221; method still used in the vast majority of present-day dictionaries.</p>
+<p>While the number of Akhyats discovered so far is far less, in the hundreds rather than tens of thousands for Han characters, it is still enough to make search non-trivial and memorizing a linear order impractical. One cannot really use the &#8220;radical&#8221; method as the use of phono-semantic compounds was not as wide spread. Also, there is much more visual information in the Indus glyph that was abstracted away in later Han characters as that script grew more complex. But the idea of classes or grouping based on related meaning can find a similar expression in the Indus case.</p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-f8df9e1 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="f8df9e1" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-de0f9e0" data-id="de0f9e0" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-367990b elementor-widget elementor-widget-heading" data-id="367990b" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h3 class="elementor-heading-title elementor-size-default">Etymology Classes and Systematic Polysemy</h3>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-b254cc6 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b254cc6" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-582219b" data-id="582219b" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-bd576d2 elementor-widget elementor-widget-text-editor" data-id="bd576d2" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>This proposal partitions the space of Indus Akhyats into 108 <b><a href="/etymology-classes">Etymology Classes</a>.</b> The classes are derived from commonality based on meaning. There are a few large blocks further grouping classes themselves. The <b>U block</b> is essentially the &#8220;tomb of the unknown character&#8221;. In any inscription, where the character is missing or damaged or we simply cannot read it, we use this character to specify that the character is not known. The <b>N block</b> is organized based on numbers although the Indus used numbers for various purposes in the script. The <b>P Block</b> corresponds to Akhyats related to peoples in the Indus civilization. The <b>G Block</b> organizes Akhyats related to places or geographies. The <b>PxG Block</b> is a set of place names that are associated to a people as France is to the French. The <b>O Block</b> contains various other groupings. Each of these classes have considerable headroom to incorporate new Akhyats while maintaining the same overall order.</p>						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-5c6404c" data-id="5c6404c" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-9fd6ef0 elementor-widget elementor-widget-text-editor" data-id="9fd6ef0" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>The Indus Encoding leverages the following structure to layout a canonical order for the Indus script.</p>
+<ul>
+<li>
+<a href="/etymology-classes"><b>Etymology Classes</b></a> &#8211; 108</li>
+<li>
+<b><a href="/compounds/#chiral-forms">Chiral Forms</a></b> &#8211;  59 pairs</li>
+<li>
+<b><a href="/compounds/#bent-forms">Bent Forms</a></b> &#8211; 73 pairs</li>
+<li>
+<b><a href="/compounds/#bw-forms">Black and White Forms</a></b> &#8211; 17 pairs</li>
+</ul>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-3cd0eb7 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3cd0eb7" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a85c900" data-id="a85c900" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-f5d4dd8 elementor-widget elementor-widget-text-editor" data-id="f5d4dd8" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>It is hard to describe Etymology classes without explaining what each means. A full explanation of this section will need to wait for the decipherment book to be published. But the logic being used may be visible just from the glyph forms to a limited extent. As an example, the four Akhyats <span class="akhyat sz-m">   </span> in block P-7 are obviously related. All the classes in the N-Block (N1 to N18) have a similar relationship based on the numbers they represent. In general, various compounds are grouped according their corresponding base form like  <span class="akhyat sz-m">          </span> in G-22. Phono-semantic compounds like <span class="akhyat sz-m"><br>     </span> are grouped according to the semantic component rather than the sound component <span class="akhyat sz-m"></span>. This has the added benefit of distributing them over a number of blocks instead of clustering them in one. It is important to realize that unlike the Han dictionaries phono-semantic compounds do not have the same level of systematic and standardized use in the Indus script. Block P-6 <span class="akhyat sz-m">     </span> clusters phono-semantic compounds based on their sound rather than radical and I suspect this is indeed how the Indus viewed them because the most important Akhyat in their glyphs is the sound component. In the case of compounds, like <span class="akhyat sz-m"></span>, we organize it by the narrower component, in this case by <span class="akhyat sz-m"></span> instead of <span class="akhyat sz-m"></span>. This is like cataloging &#8220;Brooklyn Bridge&#8221; under &#8220;Brooklyn&#8221; instead of &#8220;Bridge&#8221; because it would easier to find in things related to Brooklyn rather than all things &#8220;bridges&#8221;. It is important to note that the narrower category is defined semantically rather than by frequency of usage. <span class="akhyat sz-m"></span>  is found in 447 inscriptions rather than <span class="akhyat sz-m"></span>  which is found only in 147.</p>
+<p>I realize that this is a cryptic and incomplete description. I will come back to this once my decipherment book is published and explain each element in detail. But this is to give a flavor of the kind of considerations went into the design of the Etymology classes. There is no one right answer. Most of it comes from clustering what was useful given the need to find Akhyats in normal usage.</p>
+<p>There is another form of natural organization that is present in the Indus. This is Systematic Polysemy. Systematic Polysemy occurs in various forms in many languages. In English the word &#8220;rabbit&#8221; can mean both the animal as well as its meat. This is used systematically to generate similar related meanings across a number of words related to animals like chicken, fish, rabit, lamb, etc. Similarly, the Indus script uses various glyph transforms to generate a form of systematic polysemy. This does not really have a counterpart in the more abstract Han characters. These are of the following types &#8211; <b><a href="/compounds/#chiral-forms">Chiral Forms</a></b>, <b><a href="/compounds/#bent-forms">Bent Forms</a></b> and <b><a href="/compounds/#bw-forms">Black-and-White Forms</a>.</b></p>
+<p>Let us take <span class="akhyat sz-m"></span> versus <span class="akhyat sz-m"></span>. The central Akhyat of each is a reflected image of the other. These are called Chiral forms. They are different Akhyats but very closely related to one another. They really differ in just one aspect. In a sort, we would ideally like to have these two right next to one another. We achieve this by not only placing them in the same Etymology Class but right next to one another. This allows for the standard unicode encoding itself to keep them together in the sort. So everywhere we encounter Chiral forms we place them together. Everywhere there is a reasonable possibility that a chiral form may emerge in the future, we leave a gap in the encoding to accommodate it. The same is true of Bent Forms like <span class="akhyat sz-m"> </span> and of Black-and-White forms like <span class="akhyat sz-m"> </span>.</p>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-9df25c0 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9df25c0" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f169626" data-id="f169626" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-33ab15a elementor-widget elementor-widget-text-editor" data-id="33ab15a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>Naturally, the proposed encoding will allow one to sort Indus text in a Universal Canonical order based on these Etymology classes and this order will be available to all software by default. In effect, it is the same as the alphabetical order in English. But it is important to remember that this is just one order. Just to end out the section on a Canonical Order, the following is taken from the Unicode standard for collation and applies just as well to the Indus case.</p>
+<ul style="font-size: 17px; font-style: normal; font-weight: 400;">
+<li style="font-size: 17px;"><span style="background-color: var(--ast-global-color-4); color: var(--ast-global-color-3); font-style: inherit; font-weight: inherit;">Collation is one of the most performance-critical features in a system.</span></li>
+<li style="font-size: 17px;">Collation is not code point (binary) order.</li>
+<li style="font-size: 17px;">Collation is not aligned with character sets or repertoires of characters.</li>
+<li style="font-size: 17px;"><span style="font-style: inherit; font-weight: inherit; background-color: var(--ast-global-color-4); color: var(--ast-global-color-3);">Collation is not a property of strings.</span></li>
+<li style="font-size: 17px;">Stability is a property of a sort algorithm, not of a collation sequence.</li>
+<li style="font-size: 17px;">Collation order is not preserved under concatenation or substring operations, in general.</li>
+</ul>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-b540c04 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b540c04" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-58b5995" data-id="58b5995" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-a7e949a elementor-widget elementor-widget-heading" data-id="a7e949a" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Versioning, Deprecation and Backward Compatibility</h2>		</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-cf6ea10 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="cf6ea10" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5e42daf" data-id="5e42daf" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-0166301 elementor-widget elementor-widget-text-editor" data-id="0166301" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>As our understanding of the Indus script evolves this encoding will need to evolve as well. This is an Early Stage Draft and will likely change in the coming weeks and months. Also, while this proposal is my best effort to create a reasonable encoding, it can be wrong. As I engage with the community and they have had chance to reflect their needs into this, newer and better methods of organization may emerge. We need a method to incorporate change until the requirements for change begin to subside. To put some method in the madness, I propose the follow versioning scheme.</p>
+<p>Currently everything is pre-release meaning it does not have a version. It is given &#8220;as-is, where is&#8221; and everything can and will change. I am dogfooding this over my various projects so as to get to a reasonable initial state. Even after release of my decipherment and for a time that the community feels necessary this will continue in this pre-release state until people have had a chance to study it and engage with it.</p>
+<p>Once released, versioning will start from 1.0.0 and go monotonically upwards. All versions will be retained in a central site. Each version should ideally release a corresponding font (where necessary) so that the community can see the change. Versioning is divided into <b>major</b>.<b>minor</b>.<b>point</b> releases. </p>
+<p>A <b>major release</b> is one where we have breaking changes, which means that an existing character is changed &#8211; moved, deleted, etc. Every such character will be moved to a well-defined code in the <b>Deprecation Block O-6</b> and people can &#8220;search-replace&#8221; such characters in existing texts so that they continue to be readable. People may also be able continue using a previous version by embedding the corresponding font.</p>
+<p>A <b>minor release</b> is one where new characters are added without affecting any existing character. This means that all existing texts can continue without change and any software may upgrade to the new characters, if necessary.</p>
+<p>A <b>point release</b> means that there is no change in the character assignments but something else has changed and should not affect any existing documents or applications.</p>
+<p>Since the versioning explicitly allows for breaking changes, backward compatibility can only be offered to a limited extent through the Deprecation block. Tools and even texts can note what version they require. People should consider embedding an equivalent font so that a text written will continue to be readable where appropriate.</p>
+<p>This proposal is merely a suggestion to provide a starting point for discussion. Please feel free to get in touch and suggest improvements or changes.</p>
+<div> </div>						</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-70e4960 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="70e4960" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e3e7728" data-id="e3e7728" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+								<div class="elementor-element elementor-element-93a2b69 elementor-widget elementor-widget-spacer" data-id="93a2b69" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+					</div>
+		</div>
+							</div>
+		</section>
+							</div>
+		
+		
+		
+			</div>
+<!-- .entry-content .clear -->
+</div>
+
+	
+</article><!-- #post-## -->
+
+
+	        <nav class="navigation post-navigation" role="navigation" aria-label="Posts">
+	                <span class="screen-reader-text">Post navigation</span>
+	                <div class="nav-links">
+<div class="nav-previous"><a href="/ida-font/indus-typography/" rel="prev"><span class="ast-left-arrow">&larr;</span> Previous Page</a></div>
+<div class="nav-next"><a href="/devajyoti-sarkar/" rel="next">Next Page <span class="ast-right-arrow">&rarr;</span></a></div>
+</div>
+	        </nav>			</main><!-- #main -->
+			
+		
+	</div>
+<!-- #primary -->
+
+
+	</div> <!-- ast-container -->
+	</div>
+<!-- #content -->
+<footer class="site-footer" id="colophon" itemtype="https://schema.org/WPFooter" itemscope="itemscope" itemid="#colophon">
+			<div class="site-primary-footer-wrap ast-builder-grid-row-container site-footer-focus-item ast-builder-grid-row-3-equal ast-builder-grid-row-tablet-3-equal ast-builder-grid-row-mobile-full ast-footer-row-stack ast-footer-row-tablet-stack ast-footer-row-mobile-stack" data-section="section-primary-footer-builder">
+	<div class="ast-builder-grid-row-container-inner">
+					<div class="ast-builder-footer-grid-columns site-primary-footer-inner-wrap ast-builder-grid-row">
+											<div class="site-footer-primary-section-1 site-footer-section site-footer-section-1">
+							<aside class="footer-widget-area widget-area site-footer-focus-item footer-widget-area-inner" data-section="sidebar-widgets-footer-widget-2" aria-label="Footer Widget 2">
+			<section id="block-30" class="widget widget_block widget_media_image">
+<figure class="wp-block-image size-full"><img decoding="async" width="500" height="500" src="/wp-content/uploads/2020/03/Figleaf-3.png" alt="" class="wp-image-2745" srcset="/wp-content/uploads/2020/03/Figleaf-3.png 500w, /wp-content/uploads/2020/03/Figleaf-3-300x300.png 300w, /wp-content/uploads/2020/03/Figleaf-3-150x150.png 150w" sizes="(max-width: 500px) 100vw, 500px"></figure>
+</section>		</aside>
+						</div>
+											<div class="site-footer-primary-section-2 site-footer-section site-footer-section-2">
+									</div>
+											<div class="site-footer-primary-section-3 site-footer-section site-footer-section-3">
+							<aside class="footer-widget-area widget-area site-footer-focus-item footer-widget-area-inner" data-section="sidebar-widgets-footer-widget-3" aria-label="Footer Widget 3">
+			<section id="block-53" class="widget widget_block">
+<div style="height:48px" aria-hidden="true" class="wp-block-spacer"></div>
+</section><section id="nav_menu-10" class="widget widget_nav_menu"><h2 class="widget-title">Quick Links</h2>
+<nav class="menu-quicklinks-container" aria-label="Quick Links"><ul id="menu-quicklinks" class="menu">
+<li id="menu-item-2787" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-2787"><a href="/" class="menu-link">Home</a></li>
+<li id="menu-item-2796" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-page-parent menu-item-2796"><a href="/ida-font/" class="menu-link">Ida Font</a></li>
+<li id="menu-item-2788" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2788"><a href="/ida-font/indus-typography/" class="menu-link">Indus Typography</a></li>
+<li id="menu-item-2789" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1664 current_page_item menu-item-2789"><a href="/ida-font/unicode-proposal/" aria-current="page" class="menu-link">Unicode Encoding Proposal (Early Draft)</a></li>
+<li id="menu-item-2797" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2797"><a href="/ida-font/unicode-proposal/compounds/" class="menu-link">Compound Forms</a></li>
+<li id="menu-item-2798" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2798"><a href="/ida-font/unicode-proposal/etymology-classes/" class="menu-link">Etymology Classes</a></li>
+<li id="menu-item-2799" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2799"><a href="/ida-font/unicode-proposal/character-table/" class="menu-link">Character Table</a></li>
+<li id="menu-item-4165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4165"><a href="/rig-veda/" class="menu-link">Rig Veda</a></li>
+<li id="menu-item-4267" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4267"><a href="/devajyoti-sarkar/" class="menu-link">Devajyoti Sarkar</a></li>
+</ul></nav></section>		</aside>
+						</div>
+										</div>
+			</div>
+
+</div>
+<div class="site-below-footer-wrap ast-builder-grid-row-container site-footer-focus-item ast-builder-grid-row-full ast-builder-grid-row-tablet-full ast-builder-grid-row-mobile-full ast-footer-row-stack ast-footer-row-tablet-stack ast-footer-row-mobile-stack" data-section="section-below-footer-builder">
+	<div class="ast-builder-grid-row-container-inner">
+					<div class="ast-builder-footer-grid-columns site-below-footer-inner-wrap ast-builder-grid-row">
+											<div class="site-footer-below-section-1 site-footer-section site-footer-section-1">
+								<div class="ast-builder-layout-element ast-flex site-footer-focus-item ast-footer-copyright" data-section="section-footer-builder">
+				<div class="ast-footer-copyright">
+<p style="text-align: center;"><span style="font-size: 11pt;">Copyright &copy; 2023 All Rights Reserved Devajyoti Sarkar </span></p>
+<p style="text-align: center;"><span style="font-size: 11pt;">Contact us at: customercare@vamra-vaikhanasa.com </span></p>
+<p style="text-align: center;"><span style="font-size: 11pt;">Vamra Vaikhanasa Publishing</span></p>
+</div>			</div>
+						</div>
+										</div>
+			</div>
+
+</div>
+	</footer><!-- #colophon -->
+	</div>
+<!-- #page -->
+<script id="astra-theme-js-js-extra">var astra = {"break_point":"921","isRtl":"","is_scroll_to_id":"","is_scroll_to_top":""};</script>
+<script src="/wp-content/themes/astra/assets/js/minified/frontend.min.js?ver=4.0.2" id="astra-theme-js-js"></script>
+<script src="/wp-includes/js/jquery/jquery.min.js?ver=3.6.3" id="jquery-core-js"></script>
+<script src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0" id="jquery-migrate-js"></script>
+<script src="/wp-content/plugins/header-footer-elementor/inc/js/frontend.js?ver=1.6.13" id="hfe-frontend-js-js"></script>
+<script src="/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.11.5" id="elementor-webpack-runtime-js"></script>
+<script src="/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.11.5" id="elementor-frontend-modules-js"></script>
+<script src="/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2" id="elementor-waypoints-js"></script>
+<script src="/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2" id="jquery-ui-core-js"></script>
+<script id="elementor-frontend-js-before">var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.11.5","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"a11y_improvements":true,"additional_custom_breakpoints":true,"container":true,"landing-pages":true,"nested-elements":true,"kit-elements-defaults":true},"urls":{"assets":"\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper-container","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":1664,"title":"Unicode%20Encoding%20Proposal%20%28Early%20Draft%29%20%E2%80%93%20Vamra%20Vaikhanasa%20Publishing","excerpt":"","featuredImage":false}};</script>
+<script src="/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.11.5" id="elementor-frontend-js"></script>
+<script src="/wp-includes/js/underscore.min.js?ver=1.13.4" id="underscore-js"></script>
+<script id="wp-util-js-extra">var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};</script>
+<script src="/wp-includes/js/wp-util.min.js?ver=6.2" id="wp-util-js"></script>
+<script id="wpforms-elementor-js-extra">var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"};</script>
+<script src="/wp-content/plugins/wpforms-lite/assets/js/integrations/elementor/frontend.min.js?ver=1.8.1.1" id="wpforms-elementor-js"></script>
+
+<!--   Unlimited Elements 1.5.58 Scripts --> 
+<script type="text/javascript" id="unlimited-elements-scripts">/* Scroll To Top scripts: */ 
+
+jQuery(document).ready(function(){
+  
+  function showArrow(pixels){
+  
+     jQuery(window).scroll(function () {
+        if (jQuery(this).scrollTop() > pixels) {
+           jQuery('#uc_ue_scroll_to_top_elementor_2456c43').fadeIn(300);
+        } else {
+           jQuery('#uc_ue_scroll_to_top_elementor_2456c43').fadeOut(300);
+        }
+     });
+  
+  }
+  
+    
+  	var pixelsToScroll = 0;
+  
+    showArrow(pixelsToScroll);
+    
+    
+    
+    jQuery('#uc_ue_scroll_to_top_elementor_2456c43 .ue-scroll-to-cta').click(function () {
+       		   jQuery('body,html').animate({
+				scrollTop: 0
+		   }, 300 );
+                  });
+ });</script>
+			<script>/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);</script>
+				</body>
+</html>
